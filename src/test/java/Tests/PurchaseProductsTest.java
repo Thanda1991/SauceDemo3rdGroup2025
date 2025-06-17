@@ -23,6 +23,11 @@ public class PurchaseProductsTest extends Base{
         loginPage.clickLoginButton();
     }
 
+    @Test(dependsOnMethods = "clickLoginButton")
+    public void verifyProductTitle() {
+        homePage.verifyProductTitle();
+    }
+
     @AfterTest
     public void closeBrowser() {
         driver.quit();
