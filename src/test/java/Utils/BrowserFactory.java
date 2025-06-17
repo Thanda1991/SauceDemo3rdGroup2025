@@ -30,8 +30,8 @@ public class BrowserFactory {
         return driver;
     }
 
-    @Test
-    public void test(){
-        startBrowser("chrome", "https://www.saucedemo.com/");
-    }
+//    @Test
+//    public void test(){
+//        startBrowser("chrome", "https://www.saucedemo.com/");
+//    }
 }
