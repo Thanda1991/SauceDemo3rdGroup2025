@@ -26,10 +26,10 @@ public class LoginPage {
     }
 
     public void enterPassword(String password) {
-        username_id.sendKeys(password);
+        password_id.sendKeys(password);
     }
 
     public void clickLoginButton() {
-        username_id.click();
+        loginButton_id.click();
     }
 }
