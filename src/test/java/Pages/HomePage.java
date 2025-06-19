@@ -29,4 +29,7 @@ public class HomePage {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
     }
+    public void clickAddToCart() {
+        addToCart_id.click();
+    }
 }
