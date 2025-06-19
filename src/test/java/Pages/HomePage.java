@@ -14,6 +14,8 @@ public class HomePage {
 
     @FindBy(xpath = "//span[@class='title']")
     WebElement productTitle_xpath;
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    WebElement addToCart_id;
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
