@@ -16,6 +16,8 @@ public class HomePage {
     WebElement productTitle_xpath;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement addToCart_id;
+    @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
+    WebElement ViewCartItems_xpath;
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -32,4 +34,8 @@ public class HomePage {
     public void clickAddToCart() {
         addToCart_id.click();
     }
+//    public void ClickCart(){
+//        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
+//        ViewCartItems_xpath.click();
+//    }
 }
