@@ -34,8 +34,9 @@ public class HomePage {
     public void clickAddToCart() {
         addToCart_id.click();
     }
-//    public void ClickCart(){
-//        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
-//        ViewCartItems_xpath.click();
-//    }
+    // Button or clicking the actual Cart Icon
+    public void ClickCart(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
+        ViewCartItems_xpath.click();
+    }
 }
