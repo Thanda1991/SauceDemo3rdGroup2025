@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.CartPage;
-import Pages.CheckOutPage;
-import Pages.HomePage;
-import Pages.LoginPage;
+import Pages.*;
 import Utils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -16,5 +13,6 @@ public class Base {
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     CartPage CartPage = PageFactory.initElements(driver, CartPage.class);
     CheckOutPage CheckOutPage = PageFactory.initElements(driver, CheckOutPage.class);
+    SummaryPage SummaryPage = PageFactory.initElements(driver, Pages.SummaryPage.class);
 
 }

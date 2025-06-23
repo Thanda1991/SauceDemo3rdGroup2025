@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.CheckOutPage;
+import Pages.SummaryPage;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -51,7 +52,14 @@ public class PurchaseProductsTest extends Base{
 
     @Test(dependsOnMethods = "Postalcode")
     public void submitButton(){CheckOutPage.submitButton();}
+
+    @Test(dependsOnMethods = "submitButton")
+    public void summaryContainer(){SummaryPage.verifySummaryContainer();}
+
     }
+
+
+
 
 
 
