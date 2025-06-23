@@ -46,9 +46,13 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "enterFirstname")
     public void enterLastname(){CheckOutPage.enterLastname("Mahlehla");}
 
-    @Test(dependsOnMethods = "enterLastName")
-    public void enterPostalcode(){CheckOutPage.enterPostalcode("0008");}
+    @Test(dependsOnMethods = "enterLastname")
+    public void Postalcode(){CheckOutPage.Postalcode("0008");}
+
+    @Test(dependsOnMethods = "Postalcode")
+    public void submitButton(){CheckOutPage.submitButton();}
     }
+
 
 
 

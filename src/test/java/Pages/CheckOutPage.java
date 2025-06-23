@@ -32,7 +32,7 @@ public class CheckOutPage {
         lastName_id.sendKeys(lastname);
     }
 
-    public void enterPostalcode(String postalcode) {
+    public void Postalcode(String postalcode) {
         postalCode_id.sendKeys(postalcode);
     }
 
