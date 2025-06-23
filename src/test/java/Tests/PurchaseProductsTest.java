@@ -32,7 +32,7 @@ public class PurchaseProductsTest extends Base{
     public void addToCart(){homePage.addToCart_id();}
 
     @Test(dependsOnMethods = "addToCart")
-    public void
+    public void checkOut(){CartPage.}
 
     }
 
