@@ -15,6 +15,12 @@ public class HomePage {
     @FindBy(xpath = "//span[@class='title']")
     WebElement productTitle_xpath;
 
+    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
+    WebElement AddToCartButton_Id;
+
+    @FindBy(xpath = "//*[@id=\"shopping_cart_container\"]/a")
+    WebElement Cart_xpath;
+
     public HomePage (WebDriver driver) {
         this.driver = driver;
     }
@@ -27,4 +33,13 @@ public class HomePage {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
     }
+    public void ClickAddToCart(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(AddToCartButton_Id));
+        AddToCartButton_Id.click();
+    }
+    public void ClickToCart(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(Cart_xpath));
+        Cart_xpath.click();
+    }
 }
+
