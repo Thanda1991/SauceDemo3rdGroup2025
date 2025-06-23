@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.CartPage;
 import Pages.HomePage;
 import Pages.LoginPage;
 import Utils.BrowserFactory;
@@ -12,4 +13,5 @@ public class Base {
 
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    CartPage cartPage =PageFactory.initElements(driver, CartPage.class);
 }

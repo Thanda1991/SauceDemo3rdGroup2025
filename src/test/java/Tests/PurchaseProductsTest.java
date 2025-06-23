@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.CartPage;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -34,6 +35,11 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart(){homePage.ClickCart();}
 
+//    @Test(dependsOnMethods = "ClickCart")
+//     public  void VerifyCartTittle(){cartPage.VerifyCartTittle();}
+
+    @Test(dependsOnMethods = "clickAddToCart")
+    public void clickCheckOut(){cartPage.clickCheckOut();}
     @AfterTest
     public void closeBrowser() {
         driver.quit();
