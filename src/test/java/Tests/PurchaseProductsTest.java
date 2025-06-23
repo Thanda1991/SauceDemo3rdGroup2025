@@ -56,6 +56,13 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "submitButton")
     public void summaryContainer(){SummaryPage.verifySummaryContainer();}
 
+    @Test(dependsOnMethods = "summaryContainer")
+    public void finishButton_id(){SummaryPage.finishButton_id();
+
+    }
+    @AfterTest
+    public void shutdown(){driver.quit();}
+
     }
 
 
