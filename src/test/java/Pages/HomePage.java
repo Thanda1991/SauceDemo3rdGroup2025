@@ -16,8 +16,11 @@ public class HomePage {
     WebElement productTitle_xpath;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement addToCart_id;
+    @FindBy(id = "add-to-cart-test.allthethings()-t-shirt-(red)")
+    WebElement addToCart_item2;
     @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
     WebElement ViewCartItems_xpath;
+
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -31,11 +34,15 @@ public class HomePage {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
     }
+
+    //Click button to add items to the cart
     public void clickAddToCart() {
         addToCart_id.click();
     }
-    // Button or clicking the actual Cart Icon
-    public void ClickCart(){
+    public void clickAddToCart2(){addToCart_item2.click();}
+
+    //Click cart icon to view items added
+    public void clickCart(){
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
         ViewCartItems_xpath.click();
     }
