@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.CheckoutInfo;
-import Pages.HomePage;
-import Pages.LoginPage;
-import Pages.MyCartView;
+import Pages.*;
 import Utils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -16,4 +13,5 @@ public class Base {
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     MyCartView myCartView = PageFactory.initElements(driver, MyCartView.class);
     CheckoutInfo checkoutInfo = PageFactory.initElements(driver, CheckoutInfo.class );
+    CheckoutOverview checkoutOverview = PageFactory.initElements(driver, CheckoutOverview.class);
 }

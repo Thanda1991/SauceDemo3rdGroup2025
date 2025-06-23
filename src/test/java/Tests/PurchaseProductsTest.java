@@ -64,6 +64,15 @@ public class PurchaseProductsTest extends Base{
         checkoutInfo.clickContinueBtn();
     }
 
+    public void verifyCheckoutTitle()
+    {
+        checkoutOverview.verifyCheckoutTitle();
+    }
+
+    public void clickFinishCheckoutButton(){
+        checkoutOverview.clickFinishCheckoutButton();
+    }
+
     @AfterTest
     public void closeBrowser() {
         driver.quit();
