@@ -31,11 +31,12 @@ public class HomePage {
     }
 
     public void addToCart_id() {
-        addToCart_id.click();
-    }
+        addToCart_id.click();}
 
-    public void verifyaddToCart() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(addToCart_id));
-        addToCart_id.isSelected();
-    }
+
+
+
+
+
+
 }

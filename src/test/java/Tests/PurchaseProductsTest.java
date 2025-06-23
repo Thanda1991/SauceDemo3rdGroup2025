@@ -28,10 +28,8 @@ public class PurchaseProductsTest extends Base{
         homePage.verifyProductTitle();
     }
 
-    @Test(dependsOnMethods = "add-to-cart")
+    @Test(dependsOnMethods = "verifyProductTitle")
+    public void addToCart(){homePage.addToCart_id();}
 
-    @AfterTest
-    public void closeBrowser() {
-        driver.quit();
     }
-}
+
