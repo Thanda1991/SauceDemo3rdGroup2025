@@ -31,8 +31,12 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "verifyProductTitle")
     public void addToCart(){homePage.addToCart_id();}
 
+
     @Test(dependsOnMethods = "addToCart")
-    public void checkOut(){CartPage.}
+    public void shoppingCart(){homePage.setShoppingCart_id();}
+
+    @Test(dependsOnMethods ="shoppingCart")
+    public void checkout(){CartPage.checkout_id();}
 
     }
 

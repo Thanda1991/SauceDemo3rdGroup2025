@@ -17,6 +17,9 @@ public class HomePage {
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement addToCart_id;
 
+    @FindBy(id = "shopping_cart_container")
+    WebElement shoppingCart_id;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -29,7 +32,9 @@ public class HomePage {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
     }
-
+    public void setShoppingCart_id(){
+        shoppingCart_id.click();
+    }
     public void addToCart_id() {
         addToCart_id.click();}
 
