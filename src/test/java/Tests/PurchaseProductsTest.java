@@ -40,7 +40,6 @@ public class PurchaseProductsTest extends Base{
     public void clickCheckoutButton1(){myCartView.clickCheckoutButton();}
 
     public void verifyCheckoutTitle1() {
-
         checkoutInfo.verifyCheckoutTitle();
     }
 
@@ -63,14 +62,22 @@ public class PurchaseProductsTest extends Base{
     public void clickCheckoutButton(){
         checkoutInfo.clickContinueBtn();
     }
-
     public void verifyCheckoutTitle()
     {
         checkoutOverview.verifyCheckoutTitle();
     }
-
     public void clickFinishCheckoutButton(){
         checkoutOverview.clickFinishCheckoutButton();
+    }
+
+    public void verifyCompletionHeader(){
+        checkoutCompletion.verifyCompletionHeader();
+    }
+    public void clickBurgerMenu(){
+        checkoutCompletion.clickBurgerMenu();
+    }
+    public void clickLogoutLink(){
+        checkoutCompletion.clickLogoutLink();
     }
 
     @AfterTest

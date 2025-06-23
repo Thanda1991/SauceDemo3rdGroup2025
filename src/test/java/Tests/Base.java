@@ -14,4 +14,5 @@ public class Base {
     MyCartView myCartView = PageFactory.initElements(driver, MyCartView.class);
     CheckoutInfo checkoutInfo = PageFactory.initElements(driver, CheckoutInfo.class );
     CheckoutOverview checkoutOverview = PageFactory.initElements(driver, CheckoutOverview.class);
+    CheckoutCompletion checkoutCompletion = PageFactory.initElements(driver, CheckoutCompletion.class);
 }
