@@ -18,6 +18,7 @@ public class HomePage {
     WebElement addToCart_id;
     @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
     WebElement ViewCartItems_xpath;
+    //
 
     public HomePage (WebDriver driver) {
         this.driver = driver;

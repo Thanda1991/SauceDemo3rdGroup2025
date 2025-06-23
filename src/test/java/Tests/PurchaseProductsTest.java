@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.AddedItems;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -27,6 +28,18 @@ public class PurchaseProductsTest extends Base{
     public void verifyProductTitle() {
         homePage.verifyProductTitle();
     }
+   //@Test(Priority = 3)
+    @Test(dependsOnMethods = "Add to Cart")
+    public void clickAddToCart() { homePage.clickAddToCart();}
+
+    //@Test(Priority = 4)
+    @Test(dependsOnMethods = "Items added")
+    public void verifyAddedItems() { addedItems.verifyAddedItems();   }
+
+    //@Test(Priority = 5)
+    @Test(dependsOnMethods = "Check out added methods")
+    public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems();    }
+
 
     @AfterTest
     public void closeBrowser() {
