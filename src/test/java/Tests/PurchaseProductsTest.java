@@ -40,6 +40,16 @@ public class PurchaseProductsTest extends Base{
 
     @Test(dependsOnMethods = "clickAddToCart")
     public void clickCheckOut(){cartPage.clickCheckOut();}
+
+    @Test(dependsOnMethods = "clickCheckOut")
+    public void EnterFirstname(){yourInformationPage.EnterFirstname("dudu");}
+
+    @Test(dependsOnMethods = "EnterFirstname")
+    public void EnterLastname (){yourInformationPage.EnterLastname("Meli");}
+
+    @Test(dependsOnMethods = "EnterLastname")
+     public void EnterPostaladdress(){yourInformationPage.EnterPostaladdress("6789");}
+
     @AfterTest
     public void closeBrowser() {
         driver.quit();
