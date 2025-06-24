@@ -115,6 +115,12 @@ public class PurchaseProductsTest extends Base{
         homePage.BurgerMenu();
     }
 
+    @Test(dependsOnMethods = "BurgerMenu")
+    public void Logout()
+    {
+        homePage.Logout();
+    }
+
 
     /*@AfterTest
     public void closeBrowser() {
