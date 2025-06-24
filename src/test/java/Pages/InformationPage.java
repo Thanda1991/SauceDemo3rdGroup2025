@@ -18,7 +18,7 @@ public class InformationPage {
         this.driver = driver;
     }
 
-    public void verifyCartTitle() {
+    public void verifyInformationTitle() {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(InfoTitle_xpath));
         InfoTitle_xpath.isDisplayed();
     }
