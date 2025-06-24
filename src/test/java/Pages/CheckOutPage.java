@@ -13,6 +13,8 @@ public class CheckOutPage {
 
     @FindBy(xpath = "//span[contains(.,'Checkout: Overview')]")
     WebElement checkOut_xpath;
+    @FindBy(id = "finish")
+    WebElement finish_id;
 
     public CheckOutPage (WebDriver driver) {
         this.driver = driver;
@@ -21,5 +23,9 @@ public class CheckOutPage {
     public void verifyCheckoutTitle() {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(checkOut_xpath));
         checkOut_xpath.isDisplayed();
+    }
+
+    public void finishButton(){
+        finish_id.click();
     }
 }
