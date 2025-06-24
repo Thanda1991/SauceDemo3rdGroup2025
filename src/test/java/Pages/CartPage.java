@@ -24,4 +24,8 @@ public class CartPage {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(CartTitle_xpath));
         CartTitle_xpath.isDisplayed();
     }
+
+    public void clickCheckOut() {
+        CheckOut_id.click();
+    }
 }
