@@ -18,6 +18,8 @@ public class HomePage {
     WebElement addToCart_id;
     @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
     WebElement ViewCartItems_xpath;
+    @FindBy(id = "react-burger-menu-btn")
+    WebElement burgerMenu_id;
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -38,5 +40,9 @@ public class HomePage {
     public void ClickCart(){
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
         ViewCartItems_xpath.click();
+    }
+
+    public void BurgerMenu() {
+        burgerMenu_id.click();
     }
 }
