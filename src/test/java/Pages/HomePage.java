@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,8 +17,9 @@ public class HomePage {
     WebElement productTitle_xpath;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement addToCart_id;
-    @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
-    WebElement ViewCartItems_xpath;
+    @FindBy(id = "shopping_cart_container")
+    WebElement viewCartItems_id;
+
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -33,10 +35,13 @@ public class HomePage {
     }
     public void clickAddToCart() {
         addToCart_id.click();
+
+
     }
-    // Button or clicking the actual Cart Icon
-    public void ClickCart(){
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
-        ViewCartItems_xpath.click();
+    public void ClickCarts(){
+        new WebDriverWait(driver, Duration.ofSeconds(1000)).until(ExpectedConditions.visibilityOf(productTitle_xpath));
+        //productTitle_xpath.isDisplayed();
+        viewCartItems_id.click();
+
     }
 }
