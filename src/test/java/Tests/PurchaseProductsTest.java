@@ -78,6 +78,12 @@ public class PurchaseProductsTest extends Base{
         informationPage.postalCode();
     }
 
+    @Test(dependsOnMethods = "postalCode")
+    public void continue_id()
+    {
+        informationPage.continue_id();
+    }
+
 
     /*@AfterTest
     public void closeBrowser() {
