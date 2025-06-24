@@ -49,6 +49,8 @@ public class PurchaseProductsTest extends Base{
 
     @Test(dependsOnMethods = "EnterLastname")
      public void EnterPostaladdress(){yourInformationPage.EnterPostaladdress("6789");}
+   @Test(dependsOnMethods = "EnterPostaladdress")
+   public  void ClickContinuebtn(){yourInformationPage.ClickContinuebtn();}
 
     @AfterTest
     public void closeBrowser() {

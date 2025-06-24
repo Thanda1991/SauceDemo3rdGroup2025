@@ -17,6 +17,8 @@ public class YourInformationPage {
 
     @FindBy(id = "postal-code")
     WebElement PostalAddrss_id;
+    @FindBy(id = "continue")
+    WebElement Continue_id;
 
 
     public YourInformationPage(WebDriver driver) {
@@ -31,4 +33,8 @@ public class YourInformationPage {
     }
 
     public void EnterPostaladdress(String Postal) {PostalAddrss_id.sendKeys(Postal);}
+
+    public  void ClickContinuebtn(){
+        Continue_id.click();
+    }
 }
