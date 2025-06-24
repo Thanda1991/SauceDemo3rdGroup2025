@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.CheckOutPage;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -82,6 +83,18 @@ public class PurchaseProductsTest extends Base{
     public void continue_id()
     {
         informationPage.continue_id();
+    }
+
+    @Test(dependsOnMethods = "continue_id")
+    public void verifyCheckoutTitle()
+    {
+        checkOutPage.verifyCheckoutTitle();
+    }
+
+    @Test(dependsOnMethods = "verifyCheckoutTitle")
+    public void finishButton()
+    {
+        checkOutPage.finishButton();
     }
 
 
