@@ -22,14 +22,17 @@ public class LoginPage {
     }
 
     public void enterUsername(String username) {
+
         username_id.sendKeys(username);
     }
 
     public void enterPassword(String password) {
+
         password_id.sendKeys(password);
     }
 
     public void clickLoginButton() {
+
         loginButton_id.click();
     }
 }
