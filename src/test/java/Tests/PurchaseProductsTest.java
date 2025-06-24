@@ -39,6 +39,11 @@ public class PurchaseProductsTest extends Base{
 
     }
 
+    @Test(dependsOnMethods = "ClickCarts")
+    public void ClickCheckout(){
+        homePage.ClickCheckout();
+    }
+
 
 /*    @AfterTest
     public void closeBrowser() {

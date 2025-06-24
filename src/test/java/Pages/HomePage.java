@@ -19,6 +19,8 @@ public class HomePage {
     WebElement addToCart_id;
     @FindBy(id = "shopping_cart_container")
     WebElement viewCartItems_id;
+    @FindBy(id = "id=checkout")
+    WebElement ClickCheckout_id;
 
 
     public HomePage (WebDriver driver) {
@@ -43,5 +45,9 @@ public class HomePage {
         //productTitle_xpath.isDisplayed();
         viewCartItems_id.click();
 
+    }
+
+    public void  ClickCheckout(){
+        ClickCheckout_id.click();
     }
 }
