@@ -14,4 +14,5 @@ public class Base {
     CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
     InformationPage informationPage = PageFactory.initElements(driver, InformationPage.class);
     CheckOutPage checkOutPage = PageFactory.initElements(driver, CheckOutPage.class);
+    CompletePage completePage = PageFactory.initElements(driver, CompletePage.class);
 }

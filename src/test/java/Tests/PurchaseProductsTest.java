@@ -94,7 +94,13 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "verifyCheckoutTitle")
     public void finishButton()
     {
-        checkOutPage.finishButton(); //comeback to committ
+        checkOutPage.finishButton();
+    }
+
+    @Test(dependsOnMethods = "finishButton")
+    public void verifyCompleteCheckOut()
+    {
+        completePage.verifyCompleteCheckOut();
     }
 
 
