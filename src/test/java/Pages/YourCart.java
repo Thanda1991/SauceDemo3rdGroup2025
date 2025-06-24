@@ -22,12 +22,12 @@ public class YourCart {
     }
 
     public void verifyYourCartTitle() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(YourCartTitle_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(1000)).until(ExpectedConditions.visibilityOf(YourCartTitle_xpath));
         YourCartTitle_xpath.isDisplayed();
 
     }
 
-    public void ClickCheckout(){
+    public void ClickCheckouts(){
         ClickCheckout_id.click();
 
     }

@@ -40,8 +40,13 @@ public class PurchaseProductsTest extends Base{
     }
 
     @Test(dependsOnMethods = "ClickCarts")
-    public void ClickCheckout(){
-        homePage.ClickCheckout();
+    public void verityYourCartTitle(){
+        yourCart.verifyYourCartTitle();
+    }
+
+    @Test(dependsOnMethods = "verityYourCartTitle")
+    public void ClickCheckouts(){
+        yourCart.ClickCheckouts();
     }
 
 
