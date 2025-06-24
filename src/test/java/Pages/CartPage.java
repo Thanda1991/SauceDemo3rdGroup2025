@@ -13,6 +13,8 @@ public class CartPage {
 
     @FindBy(xpath = "//span[contains(.,'Your Cart')]")
     WebElement CartTitle_xpath;
+    @FindBy(id = "checkout")
+    WebElement CheckOut_id;
 
     public CartPage (WebDriver driver) {
         this.driver = driver;
