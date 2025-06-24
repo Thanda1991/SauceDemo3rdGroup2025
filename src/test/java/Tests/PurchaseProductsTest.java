@@ -72,6 +72,12 @@ public class PurchaseProductsTest extends Base{
         informationPage.lastName();
     }
 
+    @Test(dependsOnMethods = "lastName")
+    public void postalCode()
+    {
+        informationPage.postalCode();
+    }
+
 
     /*@AfterTest
     public void closeBrowser() {
