@@ -1,8 +1,6 @@
 package Utils;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -30,11 +28,6 @@ public class BrowserFactory {
         driver.manage().window().maximize();
         driver.get(url);
         return driver;
-    }
-
-    public void Highlight(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].style.border='3px solid red'", element);
     }
 
 //    @Test

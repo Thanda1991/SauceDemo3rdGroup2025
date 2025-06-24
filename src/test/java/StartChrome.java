@@ -16,7 +16,7 @@ public class StartChrome {
 //        driver= new EdgeDriver();
 //        driver= new SafariDriver();
         driver.manage().window().maximize();
-        driver.get("http://www.saucedemo.com/");
+        driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         Thread.sleep(1000);
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
