@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 public class PurchaseProductsTest extends Base{
 
     public void enterUsername(){
-        loginPage.enterUsername("standard_user");
+        loginPage.enterUsername(readFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
     public void enterPassword(){
-        loginPage.enterPassword("secret_sauce");
+        loginPage.enterPassword(readFromFile.password);
     }
 
     //@Test(priority = 2)
@@ -27,6 +27,9 @@ public class PurchaseProductsTest extends Base{
     public void verifyProductTitle() {
         homePage.verifyProductTitle();
     }
+
+    @Test (dependsOnMethods = "verifyProductTitle")
+    public void clickAddToCart(){homePage.clickAddToCart();}
 
     @AfterTest
     public void closeBrowser() {
