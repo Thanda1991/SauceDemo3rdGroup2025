@@ -34,10 +34,17 @@ public class PurchaseProductsTest extends Base{
     {
         homePage.clickAddToCart();
     }
+
     @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart()
     {
         homePage.ClickCart();
+    }
+
+    @Test(dependsOnMethods = "ClickCart")
+    public void verifyCartTitle()
+    {
+        cartPage.verifyCartTitle();
     }
 
     /*@AfterTest
