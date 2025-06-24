@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,8 +14,10 @@ public class HomePage {
 
     @FindBy(xpath = "//span[@class='title']")
     WebElement productTitle_xpath;
-    @FindBy(id = "add-to-cart-test.allthethings()-t-shirt-(red)")
-    WebElement addToCart;
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    WebElement addToCart_id;
+    @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
+    WebElement ViewCartItems_xpath;
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -29,5 +30,13 @@ public class HomePage {
 //        if (!actualTitle.equals(expectedTitle)) {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
-        }
     }
+    public void clickAddToCart() {
+        addToCart_id.click();
+    }
+    // Button or clicking the actual Cart Icon
+    public void ClickCart(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
+        ViewCartItems_xpath.click();
+    }
+}
