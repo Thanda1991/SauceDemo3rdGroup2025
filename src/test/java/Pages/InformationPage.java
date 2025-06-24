@@ -14,8 +14,8 @@ public class InformationPage {
 
     @FindBy(xpath = "//span[contains(.,'Checkout: Your Information')]")
     WebElement InfoTitle_xpath;
-    @FindBy(id = "first-name")
-    WebElement FirstName_id;
+    /*@FindBy(id = "first-name")
+    WebElement FirstName_id;*/
 
     public InformationPage (WebDriver driver) {
         this.driver = driver;
@@ -28,6 +28,10 @@ public class InformationPage {
 
     public void firstName() {
         driver.findElement(By.id("first-name")).sendKeys("cece");
+    }
+
+    public void lastName() {
+        driver.findElement(By.id("last-name")).sendKeys("test");
     }
 }
 

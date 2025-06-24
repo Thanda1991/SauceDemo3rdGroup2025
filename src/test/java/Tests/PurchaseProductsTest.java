@@ -59,6 +59,12 @@ public class PurchaseProductsTest extends Base{
         informationPage.verifyInformationTitle();
     }
 
+    @Test(dependsOnMethods = "verifyInformationTitle")
+    public void firstName()
+    {
+        informationPage.firstName();
+    }
+
     /*@AfterTest
     public void closeBrowser() {
         driver.quit();
