@@ -50,10 +50,10 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "verifyCartTitle")
     public void clickCheckOut()
     {
-        homePage.ClickCart();
+        cartPage.clickCheckOut();
     }
 
-    @Test(dependsOnMethods = "clickCheckOut")
+   @Test(dependsOnMethods = "clickCheckOut")
     public void verifyInformationTitle()
     {
         informationPage.verifyInformationTitle();
