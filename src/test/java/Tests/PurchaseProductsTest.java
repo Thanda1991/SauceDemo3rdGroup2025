@@ -37,6 +37,12 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "clickAddToCart2")
     public void clickCart(){homePage.clickCart();}
 
+    @Test(dependsOnMethods = "clickCart")
+    public void verifyYourCartTitle(){cartPage.verifyYourCartTitle();}
+
+    @Test(dependsOnMethods = "verifyYourCartTitle")
+    public void clickCheckoutButton(){cartPage.clickCheckoutButton();}
+
     @AfterTest
     public void closeBrowser() {
         driver.quit();
