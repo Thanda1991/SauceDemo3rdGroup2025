@@ -32,21 +32,18 @@ public class PurchaseProductsTest extends Base{
     //@Test(Priority = 3) //Adding the item to the card
     @Test(dependsOnMethods = "clickAddToCart")
     public void clickAddToCart() { homePage.clickAddToCart();}
-
-    //@Test(Priority = 4) //Verify the Added items
-    @Test(dependsOnMethods = "Items added")
-    public void verifyAddedItems() { addedItems.verifyAddedItems();   }
-
-    //@Test(Priority= 5) ////Click the CART button
     @Test(dependsOnMethods = "ClickCart")
     public void ClickCart(){ homePage.ClickCart();}
 
-    //@Test(Priority = 6)
+    //@Test(Priority = 4)
+    @Test(dependsOnMethods = "Items added")
+    public void verifyAddedItems() { addedItems.verifyAddedItems();   }
     @Test(dependsOnMethods = "CheckoutAddedItems")
     public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems(); }
-
+    //@Test(Priority = 5)
     @Test(dependsOnMethods = "checkOut")
     public void checkOut(){checkOut.verifycheckoutDetails();}
+
 
 
 
