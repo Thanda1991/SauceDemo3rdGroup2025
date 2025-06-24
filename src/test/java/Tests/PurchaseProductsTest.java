@@ -34,6 +34,10 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart(){homePage.ClickCart();}
 
+    @Test(dependsOnMethods = {"clickAddToCart", "ClickCart"})
+    public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
+    Thread.sleep(2000);}
+
     @AfterTest
     public void closeBrowser() {
         driver.quit();

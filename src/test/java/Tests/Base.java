@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.CheckoutPage;
 import Pages.HomePage;
 import Pages.LoginPage;
 import Utils.BrowserFactory;
@@ -13,5 +14,6 @@ public class Base {
 
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    CheckoutPage checkoutPage = PageFactory.initElements(driver, CheckoutPage.class);
     ReadFromFile readFromFile = new ReadFromFile();
 }
