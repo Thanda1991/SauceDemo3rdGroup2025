@@ -14,8 +14,8 @@ public class InformationPage {
 
     @FindBy(xpath = "//span[contains(.,'Checkout: Your Information')]")
     WebElement InfoTitle_xpath;
-    /*@FindBy(id = "first-name")
-    WebElement FirstName_id;*/
+    @FindBy(id = "continue")
+    WebElement Continue_id;
 
     public InformationPage (WebDriver driver) {
         this.driver = driver;
@@ -36,6 +36,10 @@ public class InformationPage {
 
     public void postalCode() {
         driver.findElement(By.id("postal-code")).sendKeys("0111");
+    }
+
+    public void continue_id() {
+        Continue_id.click();
     }
 }
 
