@@ -103,6 +103,12 @@ public class PurchaseProductsTest extends Base{
         completePage.verifyCompleteCheckOut();
     }
 
+    @Test(dependsOnMethods = "verifyCompleteCheckOut")
+    public void backToProductButton()
+    {
+        completePage.backToProductButton();
+    }
+
 
     /*@AfterTest
     public void closeBrowser() {
