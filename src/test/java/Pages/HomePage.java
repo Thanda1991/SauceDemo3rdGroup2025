@@ -20,7 +20,7 @@ public class HomePage {
     @FindBy(id = "shopping_cart_container")
     WebElement viewCartItems_id;
     @FindBy(id = "id=checkout")
-    WebElement ClickCheckout_id;
+    WebElement clickCheckout_id;
 
 
     public HomePage (WebDriver driver) {
@@ -30,10 +30,6 @@ public class HomePage {
     public void verifyProductTitle() {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(productTitle_xpath));
         productTitle_xpath.isDisplayed();
-//        String actualTitle = productTitle_xpath.getText();
-//        if (!actualTitle.equals(expectedTitle)) {
-//            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
-//        }
     }
     public void clickAddToCart() {
         addToCart_id.click();
@@ -41,13 +37,13 @@ public class HomePage {
 
     }
     public void ClickCarts(){
-        new WebDriverWait(driver, Duration.ofSeconds(1000)).until(ExpectedConditions.visibilityOf(productTitle_xpath));
+//        new WebDriverWait(driver, Duration.ofSeconds(1000)).until(ExpectedConditions.visibilityOf(productTitle_xpath));
         //productTitle_xpath.isDisplayed();
         viewCartItems_id.click();
 
     }
 
-    public void  ClickCheckout(){
-        ClickCheckout_id.click();
+    public void  clickCheckout(){
+        clickCheckout_id.click();
     }
 }
