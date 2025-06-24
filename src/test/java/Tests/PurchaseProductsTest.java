@@ -53,6 +53,12 @@ public class PurchaseProductsTest extends Base{
         homePage.ClickCart();
     }
 
+    @Test(dependsOnMethods = "clickCheckOut")
+    public void verifyInformationTitle()
+    {
+        informationPage.verifyInformationTitle();
+    }
+
     /*@AfterTest
     public void closeBrowser() {
         driver.quit();
