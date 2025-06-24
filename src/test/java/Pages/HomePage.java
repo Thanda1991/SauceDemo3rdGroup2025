@@ -20,6 +20,8 @@ public class HomePage {
     WebElement ViewCartItems_xpath;
     @FindBy(id = "react-burger-menu-btn")
     WebElement burgerMenu_id;
+    @FindBy(id = "logout_sidebar_link")
+    WebElement logout_id;
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -44,5 +46,9 @@ public class HomePage {
 
     public void BurgerMenu() {
         burgerMenu_id.click();
+    }
+
+    public void Logout() {
+        logout_id.click();
     }
 }
