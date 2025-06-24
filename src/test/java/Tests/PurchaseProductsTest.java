@@ -57,6 +57,7 @@ public class PurchaseProductsTest extends Base{
     public void verifyInformationTitle()
     {
         informationPage.verifyInformationTitle();
+
     }
 
     @Test(dependsOnMethods = "verifyInformationTitle")

@@ -33,6 +33,10 @@ public class InformationPage {
     public void lastName() {
         driver.findElement(By.id("last-name")).sendKeys("test");
     }
+
+    public void postalCode() {
+        driver.findElement(By.id("postal-code")).sendKeys("0111");
+    }
 }
 
 
