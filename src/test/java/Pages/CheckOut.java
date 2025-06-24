@@ -15,6 +15,8 @@ public class CheckOut {
 
    @FindBy(xpath = "//div[@id='header_container']/div[2]/span")
    WebElement checkoutYourInfo_xpath;
+
+   //Information below is not used!
    @FindBy(id = "first-name")
    WebElement firstName_xpath;
    @FindBy(id ="last-name")
@@ -33,13 +35,8 @@ public void verifycheckoutDetails(){
    checkoutYourInfo_xpath.isDisplayed();
 }
 
-public void enterName(){
+public void EnterName(){ firstName_xpath.sendKeys("Brenda");}
 
-   driver.findElement(By.id("first-name")).sendKeys("Shiluva");
-   driver.findElement(By.id("last-name")).sendKeys("Mayinga");
-   driver.findElement(By.id("postal-code")).sendKeys("6500");
-   driver.findElement(By.id("continue")).click();
-   driver.findElement(By.xpath("//button[@id='finish']")).click();}
  }
 
 

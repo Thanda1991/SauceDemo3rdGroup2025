@@ -44,6 +44,8 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "checkOut")
     public void checkOut(){checkOut.verifycheckoutDetails();}
 
+    @Test(dependsOnMethods = "EnterDetails")
+    public void EnterDetails(){};
 
 
 
