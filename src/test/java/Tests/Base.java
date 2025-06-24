@@ -1,7 +1,6 @@
 package Tests;
 
-import Pages.HomePage;
-import Pages.LoginPage;
+import Pages.*;
 import Utils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -12,4 +11,12 @@ public class Base {
 
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+
+    CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
+
+    CheckoutPage checkoutPage = PageFactory.initElements(driver, CheckoutPage.class);
+
+    CheckoutCompletePage checkoutcompletePage = PageFactory.initElements(driver, CheckoutCompletePage.class);
+
+    CheckoutOverviewPage  checkoutoverviewPage= PageFactory.initElements(driver, CheckoutOverviewPage.class);
 }
