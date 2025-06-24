@@ -109,6 +109,12 @@ public class PurchaseProductsTest extends Base{
         completePage.backToProductButton();
     }
 
+    @Test(dependsOnMethods = "backToProductButton")
+    public void BurgerMenu()
+    {
+        homePage.BurgerMenu();
+    }
+
 
     /*@AfterTest
     public void closeBrowser() {
