@@ -38,8 +38,32 @@ public class PurchaseProductsTest extends Base{
     public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
     Thread.sleep(2000);}
 
+    @Test(dependsOnMethods = "clickCheckoutTests")
+    public void enterFirstName(){ infoPage.enterFirstName(readFromFile.firstName);}
+
+    @Test (dependsOnMethods = "enterFirstName")
+    public void enterLastName() throws InterruptedException {infoPage.enterLastName(readFromFile.lastName);
+    Thread.sleep(2000);
+    }
+
+
+
+    @Test (dependsOnMethods = "enterLastName")
+    public void enterPostalCode() throws InterruptedException {infoPage.enterPostalCode(readFromFile.postalCode);
+        Thread.sleep(2000);
+
+    }
+
+    @Test (dependsOnMethods = "enterPostalCode")
+    public void clickContinue() throws InterruptedException {infoPage.clickContinue();
+        Thread.sleep(2000);}
+
+
+
     @AfterTest
     public void closeBrowser() {
         driver.quit();
     }
+
+
 }
