@@ -16,7 +16,7 @@ public class StartChrome {
 //        driver= new EdgeDriver();
 //        driver= new SafariDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://winsytemsintl.atlassian.net/browse/ITB-6494/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         Thread.sleep(1000);
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -26,6 +26,9 @@ public class StartChrome {
         Assert.assertEquals(ProductText, "Products");
 
         driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
+
+
+
 
     }
 
