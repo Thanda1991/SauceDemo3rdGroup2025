@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.AddedItems;
+import Pages.CheckOut;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -30,27 +31,34 @@ public class PurchaseProductsTest extends Base{
     }
 
     //@Test(Priority = 3) //Adding the item to the card
-    @Test(dependsOnMethods = "clickAddToCart")
+    //@Test(dependsOnMethods = "clickAddToCart")
+    @Test(dependsOnMethods = "verifyProductTitle")
     public void clickAddToCart() { homePage.clickAddToCart();}
-    @Test(dependsOnMethods = "ClickCart")
+
+//    @Test(dependsOnMethods = "ClickCart")
+    @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart(){ homePage.ClickCart();}
 
-    //@Test(Priority = 4)
-    @Test(dependsOnMethods = "Items added")
-    public void verifyAddedItems() { addedItems.verifyAddedItems();   }
+//    //@Test(Priority = 4)
+ @Test(dependsOnMethods = "ClickCart")
+ public void verifyAddedItems() { addedItems.verifyAddedItems();   }
+
+  @Test(dependsOnMethods = "verifyAddedItems")
+public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems(); }
+
     @Test(dependsOnMethods = "CheckoutAddedItems")
-    public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems(); }
-    //@Test(Priority = 5)
-    @Test(dependsOnMethods = "checkOut")
-    public void checkOut(){checkOut.verifycheckoutDetails();}
+    public void verifycheckoutDetails(){checkOut.verifycheckoutDetails();
 
-    @Test(dependsOnMethods = "EnterDetails")
-    public void EnterDetails(){};
-
+    }
+@Test(dependsOnMethods =  "verifycheckoutDetails")
+        public void EnterName(){checkOut.EnterName(readFromFile.firstname);
+}
 
 
-    @AfterTest
-    public void closeBrowser() {
-        driver.quit();
+
+ @AfterTest
+public void closeBrowser() {
+ driver.quit();
+
     }
 }

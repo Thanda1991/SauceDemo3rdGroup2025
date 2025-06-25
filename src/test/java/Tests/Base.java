@@ -5,6 +5,7 @@ import Pages.CheckOut;
 import Pages.HomePage;
 import Pages.LoginPage;
 import Utils.BrowserFactory;
+import Utils.ReadFromFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,6 +17,7 @@ public class Base {
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     AddedItems addedItems = PageFactory.initElements(driver,AddedItems.class);
     CheckOut checkOut = PageFactory.initElements(driver,CheckOut.class);
+    ReadFromFile readFromFile =PageFactory.initElements(driver,ReadFromFile.class);
 
 
 

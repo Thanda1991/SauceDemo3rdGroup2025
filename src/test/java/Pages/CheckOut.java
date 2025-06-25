@@ -35,7 +35,7 @@ public void verifycheckoutDetails(){
    checkoutYourInfo_xpath.isDisplayed();
 }
 
-public void EnterName(){ firstName_xpath.sendKeys("Brenda");}
+//public void EnterName(){ }
 
  }
 
