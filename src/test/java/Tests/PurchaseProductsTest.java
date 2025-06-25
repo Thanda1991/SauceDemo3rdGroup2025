@@ -1,8 +1,12 @@
 package Tests;
 
 import net.bytebuddy.build.Plugin;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 @Test
 public class PurchaseProductsTest extends Base{
@@ -37,6 +41,7 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = {"clickAddToCart", "ClickCart"})
     public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
     Thread.sleep(2000);}
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
     @AfterTest
     public void closeBrowser() {
