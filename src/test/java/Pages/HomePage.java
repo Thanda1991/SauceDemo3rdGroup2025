@@ -14,12 +14,10 @@ public class HomePage {
 
     @FindBy(xpath = "//span[@class='title']")
     WebElement productTitle_xpath;
-
-    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
-    WebElement AddToCartButton_Id;
-
-    @FindBy(xpath = "//*[@id=\"shopping_cart_container\"]/a")
-    WebElement Cart_xpath;
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    WebElement addToCart_id;
+    @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
+    WebElement ViewCartItems_xpath;
 
     public HomePage (WebDriver driver) {
         this.driver = driver;
@@ -33,13 +31,12 @@ public class HomePage {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
     }
-    public void ClickAddToCart(){
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(AddToCartButton_Id));
-        AddToCartButton_Id.click();
+    public void clickAddToCart() {
+        addToCart_id.click();
     }
-    public void ClickToCart(){
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(Cart_xpath));
-        Cart_xpath.click();
+    // Button or clicking the actual Cart Icon
+    public void ClickCart(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
+        ViewCartItems_xpath.click();
     }
 }
-

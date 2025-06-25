@@ -1,10 +1,10 @@
 package Tests;
 
-import Pages.CartPage;
+import Pages.CheckoutPage;
 import Pages.HomePage;
 import Pages.LoginPage;
-import Pages.YourInfomationPage;
 import Utils.BrowserFactory;
+import Utils.ReadFromFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,6 +14,6 @@ public class Base {
 
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-    CartPage cartPage =PageFactory.initElements(driver,CartPage.class);
-    YourInfomationPage yourInfomationPage= PageFactory.initElements(driver, YourInfomationPage.class);
+    CheckoutPage checkoutPage = PageFactory.initElements(driver, CheckoutPage.class);
+    ReadFromFile readFromFile = new ReadFromFile();
 }
