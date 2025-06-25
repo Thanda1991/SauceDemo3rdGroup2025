@@ -35,9 +35,11 @@ public void verifycheckoutDetails(){
    checkoutYourInfo_xpath.isDisplayed();
 }
 
-//public void EnterName(){ }
+public void EnterName(String firstname){
+   firstName_xpath.sendKeys(); }
 
- }
+   }
+
 
 
 
