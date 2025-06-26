@@ -32,14 +32,34 @@ public class PurchaseProductsTest extends Base{
     public void clickAddToCart(){homePage.clickAddToCart();}
 
     @Test(dependsOnMethods = "clickAddToCart")
-    public void ClickCart(){homePage.ClickCart();}
+    public void clickCart(){homePage.clickCart();}
 
-    @Test(dependsOnMethods = {"clickAddToCart", "ClickCart"})
+    @Test(dependsOnMethods = {"clickAddToCart", "clickCart"})
     public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
     Thread.sleep(2000);}
 
-    @AfterTest
+    @Test(dependsOnMethods = "clickCheckoutTests")
+    public void enterFirstName() {
+        yourInfoPage.enterFirstName(readFromFile.firstName);
+    }
+
+    @Test(dependsOnMethods = "enterFirstName")
+    public void enterLastName() {
+        yourInfoPage.enterLastName(readFromFile.lastName);
+    }
+
+    @Test(dependsOnMethods = "enterLastName")
+    public void enterPostalCode() {
+        yourInfoPage.enterPostalCode(readFromFile.postalCode);
+    }
+
+    @Test(dependsOnMethods = "enterPostalCode")
+    public void clickContinue() {
+        yourInfoPage.clickContinue();
+    }
+
+ /*   @AfterTest
     public void closeBrowser() {
         driver.quit();
-    }
+    } */
 }

@@ -36,7 +36,7 @@ public class HomePage {
 
 
     }
-    public void ClickCarts(){
+    public void clickCart(){
 //        new WebDriverWait(driver, Duration.ofSeconds(1000)).until(ExpectedConditions.visibilityOf(productTitle_xpath));
         //productTitle_xpath.isDisplayed();
         viewCartItems_id.click();

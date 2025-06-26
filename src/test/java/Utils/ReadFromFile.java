@@ -37,5 +37,17 @@ public class ReadFromFile {
 
     public static String username = sheet.getRow(1).getCell(0).getStringCellValue();
     public static String password = sheet.getRow(1).getCell(1).getStringCellValue();
+    public static String firstName = sheet2.getRow(1).getCell(0).getStringCellValue();
+    public static String lastName = sheet2.getRow(1).getCell(1).getStringCellValue();
+    public static String postalCode = sheet2.getRow(1).getCell(2).getStringCellValue();
+
+    @Test
+    public void test(){
+        System.out.println("Username is "+username);
+        System.out.println("Password is "+password);
+        System.out.println("FirstName is "+firstName);
+        System.out.println("LastName is  "+lastName);
+        System.out.println("PostalCode is "+postalCode);
+    }
 
 }
