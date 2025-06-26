@@ -14,8 +14,15 @@ public class InformationPage {
 
     @FindBy(xpath = "//span[contains(.,'Checkout: Your Information')]")
     WebElement InfoTitle_xpath;
+    @FindBy(id = "first-name")
+    WebElement firstname_id;
+    @FindBy(id = "last-name")
+    WebElement lastname_id;
+    @FindBy(id = "postal-code")
+    WebElement postalcode_id;
     @FindBy(id = "continue")
-    WebElement Continue_id;
+    WebElement continue_id;
+
 
     public InformationPage (WebDriver driver) {
         this.driver = driver;
@@ -26,20 +33,21 @@ public class InformationPage {
         InfoTitle_xpath.isDisplayed();
     }
 
-    public void firstName() {
-        driver.findElement(By.id("first-name")).sendKeys("cece");
+    public void enterfirstName(String firstname) {
+        firstname_id.sendKeys(firstname);
+
     }
 
-    public void lastName() {
-        driver.findElement(By.id("last-name")).sendKeys("test");
+    public void enterlastName(String lastname) {
+        lastname_id.sendKeys(lastname);
     }
 
-    public void postalCode() {
-        driver.findElement(By.id("postal-code")).sendKeys("0111");
+    public void enterpostalCode(String postalcode) {
+        postalcode_id.sendKeys(postalcode);
     }
 
     public void continue_id() {
-        Continue_id.click();
+        continue_id.click();
     }
 }
 
