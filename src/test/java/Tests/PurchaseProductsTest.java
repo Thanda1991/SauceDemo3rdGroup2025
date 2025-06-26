@@ -15,6 +15,7 @@ public class PurchaseProductsTest extends Base{
     //@Test(priority = 1)
     public void enterPassword(){
         loginPage.enterPassword(readFromFile.password);
+        takesScreenshots.takesScreenshot(driver, "LoginPage");
     }
 
     //@Test(priority = 2)
@@ -26,6 +27,7 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "clickLoginButton")
     public void verifyProductTitle() {
         homePage.verifyProductTitle();
+        takesScreenshots.takesScreenshot(driver, "HomePage");
     }
 
     @Test (dependsOnMethods = "verifyProductTitle")
