@@ -7,21 +7,21 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 @Test
-public class PurchaseProductsTest extends Base{
+public class PurchaseProductsTest extends Base {
 
-    public void enterUsername(){
+    public void enterUsername() {
         loginPage.enterUsername("standard_user");
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
-    public void enterPassword(){
+    public void enterPassword() {
         loginPage.enterPassword("secret_sauce");
     }
 
     //@Test(priority = 2)
     @Test(dependsOnMethods = "enterPassword")
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         loginPage.clickLoginButton();
     }
 
@@ -33,40 +33,52 @@ public class PurchaseProductsTest extends Base{
     //@Test(Priority = 3) //Adding the item to the card
     //@Test(dependsOnMethods = "clickAddToCart")
     @Test(dependsOnMethods = "verifyProductTitle")
-    public void clickAddToCart() { homePage.clickAddToCart();}
+    public void clickAddToCart() {
+        homePage.clickAddToCart();
+    }
 
-//    @Test(dependsOnMethods = "ClickCart")
+    //    @Test(dependsOnMethods = "ClickCart")
     @Test(dependsOnMethods = "clickAddToCart")
-    public void ClickCart(){ homePage.ClickCart();}
+    public void ClickCart() {
+        homePage.ClickCart();
+    }
 
-//    //@Test(Priority = 4)
- @Test(dependsOnMethods = "ClickCart")
- public void verifyAddedItems() { addedItems.verifyAddedItems();   }
+    //    //@Test(Priority = 4)
+    @Test(dependsOnMethods = "ClickCart")
+    public void verifyAddedItems() {
+        addedItems.verifyAddedItems();
+    }
 
-  @Test(dependsOnMethods = "verifyAddedItems")
-public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems(); }
+    @Test(dependsOnMethods = "verifyAddedItems")
+    public void CheckoutAddedItems() {
+        addedItems.CheckoutAddedItems();
+    }
 
     @Test(dependsOnMethods = "CheckoutAddedItems")
-    public void verifycheckoutDetails(){checkOut.verifycheckoutDetails();
+    public void verifycheckoutDetails() {
+        checkOut.verifycheckoutDetails();
 
     }
-//@Test(dependsOnMethods =  "verifycheckoutDetails")
-//        public void EnterName(){checkOut.EnterName(readFromFile.firstname);
-//}
 
-@Test(dependsOnMethods = "verifycheckoutDetails")
-public void EnterName(){checkOut.EnterName(readFromFile.firstname);}
+    @Test(dependsOnMethods = "verifycheckoutDetails")
+    public void EnterName() {
+        checkOut.EnterName(readFromFile.firstname);
+    }
 
-@Test(dependsOnMethods = "EnterName")
-public void EnterLastName(){checkOut.EnterLastName(readFromFile.lastname);}
+    @Test(dependsOnMethods = "EnterName")
+    public void EnterLastName() {
+        checkOut.EnterLastName(readFromFile.lastname);
+    }
 
- @Test(dependsOnMethods = "EnterLastName")
-public void EnterPostalCode(){checkOut.EnterPostalCode(readFromFile.postalcode);}
+    @Test(dependsOnMethods = "EnterLastName")
+    public void EnterPostalCode() {
+        checkOut.EnterPostalCode(readFromFile.postalcode);
+    }
 
 
- @AfterTest
-public void closeBrowser() {
- driver.quit();
+    @AfterTest
+    public void closeBrowser() {
+        driver.quit();
 
     }
 }

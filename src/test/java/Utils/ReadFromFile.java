@@ -45,6 +45,14 @@ public class ReadFromFile {
     public static String lastname = sheet.getRow(1).getCell(1).getStringCellValue();
     public static String postalcode = sheet.getRow(1).getCell(2).getStringCellValue();
 
+//    @Test
+//    public void test()
+//    {
+//        System.out.println("postal code is:"+postalcode);
+//        System.out.println("FirstName is:"+firstname);
+//        System.out.println("LastNme is:"+lastname);
+//
+//    }
 
 
 }
