@@ -33,12 +33,18 @@ public class ReadFromFile {
     }
 
     static XSSFSheet sheet = workbook.getSheet("login");
-    static XSSFSheet sheet2 = workbook.getSheet("User_details");
+    static XSSFSheet sheet2 = workbook.getSheet("user_details");
 
     public static String username = sheet.getRow(1).getCell(0).getStringCellValue();
     public static String password = sheet.getRow(1).getCell(1).getStringCellValue();
 
-    public static String name = sheet2.getRow(1).getCell(0).getStringCellValue();
-    public static String sname = sheet2.getRow(1).getCell(1).getStringCellValue();
-    public static String postalCode = sheet2.getRow(1).getCell(2).getStringCellValue();
+    public static String first_name = sheet2.getRow(2).getCell(0).getStringCellValue();
+    public static String sname = sheet2.getRow(2).getCell(1).getStringCellValue();
+    public static String postalCode = sheet2.getRow(2).getCell(2).getStringCellValue();
+//    @Test
+//    public  void test(){
+//        System.out.println("first name is: "+first_name);
+//        System.out.println("Surname name is: "+sname);
+//        System.out.println("Postal code is: "+postalCode);
+//    }
 }

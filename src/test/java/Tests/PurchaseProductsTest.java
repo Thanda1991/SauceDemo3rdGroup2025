@@ -1,5 +1,6 @@
 package Tests;
 
+import Utils.ReadFromFile;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -37,6 +38,22 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = {"clickAddToCart", "ClickCart"})
     public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
     Thread.sleep(2000);}
+
+    @Test(dependsOnMethods = "clickCheckoutTests")
+    public void enterFirstName(){
+      checkoutPage.enterFirstName(readFromFile.first_name);
+
+    }
+    @Test(dependsOnMethods = "enterFirstName")
+    public void enterLastName(){
+        checkoutPage.enterSurname(readFromFile.sname);
+
+    }
+    @Test(dependsOnMethods = "enterLastName")
+    public void enterPostalCode(){
+        checkoutPage.enterPostalCode(readFromFile.postalCode);
+
+    }
 
     @AfterTest
     public void closeBrowser() {
