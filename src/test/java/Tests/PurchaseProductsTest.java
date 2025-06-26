@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 public class PurchaseProductsTest extends Base{
 
     public void enterUsername(){
-        loginPage.enterUsername("standard_user");
+        loginPage.enterUsername(readFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
     public void enterPassword(){
-        loginPage.enterPassword("secret_sauce");
+        loginPage.enterPassword(readFromFile.password);
     }
 
     //@Test(priority = 2)
@@ -65,17 +65,17 @@ public class PurchaseProductsTest extends Base{
 
     @Test(dependsOnMethods = "verifyCheckoutTitle")
     public void enterFirstName(){
-        checkoutStepOnePage.enterFirstName("Lubabalo");
+        checkoutStepOnePage.enterFirstName(readFromFile.firstName);
     }
 
     @Test(dependsOnMethods = "enterFirstName")
     public void enterLastName(){
-        checkoutStepOnePage.enterLastName("Mkhize");
+        checkoutStepOnePage.enterLastName(readFromFile.lastName);
     }
 
     @Test(dependsOnMethods = "enterLastName")
     public void enterPostalCode(){
-        checkoutStepOnePage.enterPostalCode("4000");
+        checkoutStepOnePage.enterPostalCode(readFromFile.postalCode);
     }
 
     @Test(dependsOnMethods = "enterPostalCode")

@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.*;
 import Utils.BrowserFactory;
+import Utils.ReadFromFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,4 +16,5 @@ public class Base {
     CheckoutStepOnePage checkoutStepOnePage = PageFactory.initElements(driver, CheckoutStepOnePage.class);
     CheckoutStepTwoPage checkoutStepTwoPage = PageFactory.initElements(driver, CheckoutStepTwoPage.class);
     CheckoutCompletePage checkoutCompletePage = PageFactory.initElements(driver, CheckoutCompletePage.class);
+    ReadFromFile readFromFile = new ReadFromFile();
 }
