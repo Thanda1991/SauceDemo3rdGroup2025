@@ -5,6 +5,7 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import Utils.BrowserFactory;
 import Utils.ReadFromFile;
+import Utils.TakesScreenshots;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,4 +17,5 @@ public class Base {
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     CheckoutPage checkoutPage = PageFactory.initElements(driver, CheckoutPage.class);
     ReadFromFile readFromFile = new ReadFromFile();
+    TakesScreenshots takesScreenshots = new TakesScreenshots();
 }
