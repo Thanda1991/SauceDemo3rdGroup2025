@@ -62,24 +62,24 @@ public class PurchaseProductsTest extends Base{
     }
 
     @Test(dependsOnMethods = "verifyInformationTitle")
-    public void firstName()
+    public void enterfirstName()
     {
-        informationPage.firstName();
+        informationPage.enterfirstName(readFromFile.firstname);
     }
 
-    @Test(dependsOnMethods = "firstName")
-    public void lastName()
+    @Test(dependsOnMethods = "enterfirstName")
+    public void enterlastName()
     {
-        informationPage.lastName();
+        informationPage.enterlastName(readFromFile.lastname);
     }
 
-    @Test(dependsOnMethods = "lastName")
-    public void postalCode()
+    @Test(dependsOnMethods = "enterlastName")
+    public void enterpostalCode()
     {
-        informationPage.postalCode();
+        informationPage.enterpostalCode(readFromFile.postalcode);
     }
 
-    @Test(dependsOnMethods = "postalCode")
+    @Test(dependsOnMethods = "enterpostalCode")
     public void continue_id()
     {
         informationPage.continue_id();
