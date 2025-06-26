@@ -1,6 +1,5 @@
 package Tests;
 
-import Pages.HomePage;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -9,13 +8,13 @@ import org.testng.annotations.Test;
 public class PurchaseProductsTest extends Base{
 
     public void enterUsername(){
-        loginPage.enterUsername("standard_user");
+        loginPage.enterUsername(readFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
     public void enterPassword(){
-        loginPage.enterPassword("secret_sauce");
+        loginPage.enterPassword(readFromFile.password);
     }
 
     //@Test(priority = 2)
@@ -28,30 +27,19 @@ public class PurchaseProductsTest extends Base{
     public void verifyProductTitle() {
         homePage.verifyProductTitle();
     }
-  @Test(dependsOnMethods = "verifyProductTitle")
-    public void clickAddToCart() {
-      homePage.clickAddToCart();
-    }
+
+    @Test (dependsOnMethods = "verifyProductTitle")
+    public void clickAddToCart(){homePage.clickAddToCart();}
 
     @Test(dependsOnMethods = "clickAddToCart")
-    public void ClickCarts() {
-        homePage.ClickCarts();
+    public void ClickCart(){homePage.ClickCart();}
 
-    }
+    @Test(dependsOnMethods = {"clickAddToCart", "ClickCart"})
+    public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
+    Thread.sleep(2000);}
 
-    @Test(dependsOnMethods = "ClickCarts")
-    public void verifyYourCartTitle(){
-        yourCart.verifyYourCartTitle();
-    }
-
-    @Test(dependsOnMethods = "verifyYourCartTitle")
-    public void ClickCheckouts(){
-        yourCart.ClickCheckouts();
-    }
-
-
-/*    @AfterTest
+    @AfterTest
     public void closeBrowser() {
         driver.quit();
-    } */
+    }
 }
