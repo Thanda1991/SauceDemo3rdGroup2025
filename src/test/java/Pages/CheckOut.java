@@ -36,7 +36,7 @@ public void verifycheckoutDetails(){
 }
 
 public void EnterName(String firstname){
-   firstName_xpath.sendKeys(); }
+   firstName_xpath.sendKeys(firstname); }
 
    }
 
