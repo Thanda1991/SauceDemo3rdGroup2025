@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 public class PurchaseProductsTest extends Base{
 
     public void enterUsername(){
-        loginPage.enterUsername("standard_user");
+        loginPage.enterUsername(readFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
     public void enterPassword(){
-        loginPage.enterPassword("secret_sauce");
+        loginPage.enterPassword(readFromFile.password);
     }
 
     //@Test(priority = 2)
@@ -28,20 +28,15 @@ public class PurchaseProductsTest extends Base{
         homePage.verifyProductTitle();
     }
 
-    @Test(dependsOnMethods = "verifyProductTitle")
+    @Test (dependsOnMethods = "verifyProductTitle")
     public void clickAddToCart(){homePage.clickAddToCart();}
 
     @Test(dependsOnMethods = "clickAddToCart")
-    public void clickAddToCart2(){homePage.clickAddToCart2();}
+    public void ClickCart(){homePage.ClickCart();}
 
-    @Test(dependsOnMethods = "clickAddToCart2")
-    public void clickCart(){homePage.clickCart();}
-
-    @Test(dependsOnMethods = "clickCart")
-    public void verifyYourCartTitle(){cartPage.verifyYourCartTitle();}
-
-    @Test(dependsOnMethods = "verifyYourCartTitle")
-    public void clickCheckoutButton(){cartPage.clickCheckoutButton();}
+    @Test(dependsOnMethods = {"clickAddToCart", "ClickCart"})
+    public void clickCheckoutTests() throws InterruptedException {checkoutPage.clickCheckout();
+    Thread.sleep(2000);}
 
     @AfterTest
     public void closeBrowser() {
