@@ -122,8 +122,8 @@ public class PurchaseProductsTest extends Base{
     }
 
 
-    /*@AfterTest
+    @AfterTest
     public void closeBrowser() {
         driver.quit();
-    }*/
+    }
 }
