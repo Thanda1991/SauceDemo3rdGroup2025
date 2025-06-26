@@ -1,5 +1,6 @@
 package Tests;
 
+import Utils.ReadFromFile;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -8,14 +9,14 @@ public class PurchaseProductsTest extends Base {
     @Test(priority = 1)
     public void enterUsername() throws InterruptedException {
         // Step 1: Enter valid username on login page
-        loginPage.enterUsername("standard_user");
+        loginPage.enterUsername(ReadFromFile.username);
         Thread.sleep(1000);
     }
 
     @Test(priority = 2, dependsOnMethods = "enterUsername")
     public void enterPassword() throws InterruptedException {
         // Step 2: Enter password after username
-        loginPage.enterPassword("secret_sauce");
+        loginPage.enterPassword(ReadFromFile.password);
         Thread.sleep(1000);
     }
 
@@ -65,9 +66,9 @@ public class PurchaseProductsTest extends Base {
     @Test(priority = 9, dependsOnMethods = "verifyCheckoutTitle")
     public void enterCheckoutInformation() throws InterruptedException {
         // Step 9: Fill in first name, last name, and postal code
-        checkoutPage.enterFirstname("Ree");
-        checkoutPage.enterLastname("Test");
-        checkoutPage.enterPostal("2031");
+        checkoutPage.enterFirstname(ReadFromFile.firstname);
+        checkoutPage.enterLastname(ReadFromFile.lastname);
+        checkoutPage.enterPostal(ReadFromFile.postalcode);
         Thread.sleep(1000);
     }
 

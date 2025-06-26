@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.*;
 import Utils.BrowserFactory;
+import Utils.ReadFromFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -19,4 +20,6 @@ public class Base {
     CheckoutCompletePage checkoutcompletePage = PageFactory.initElements(driver, CheckoutCompletePage.class);
 
     CheckoutOverviewPage  checkoutoverviewPage= PageFactory.initElements(driver, CheckoutOverviewPage.class);
+
+    ReadFromFile readFromFile = new ReadFromFile();
 }
