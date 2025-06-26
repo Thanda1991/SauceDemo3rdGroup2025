@@ -48,7 +48,7 @@ public class HomePage {
         burgerMenu_id.click();
     }
 
-    public void Logout() {
+    public void LogOut() {
         logout_id.click();
     }
 }

@@ -116,9 +116,9 @@ public class PurchaseProductsTest extends Base{
     }
 
     @Test(dependsOnMethods = "BurgerMenu")
-    public void Logout()
+    public void LogOut()
     {
-        homePage.Logout();
+        homePage.LogOut();
     }
 
 
