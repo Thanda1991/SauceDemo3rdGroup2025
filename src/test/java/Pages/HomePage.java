@@ -16,8 +16,8 @@ public class HomePage {
     WebElement productTitle_xpath;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement addToCart_id;
-    @FindBy(id = "add-to-cart-test.allthethings()-t-shirt-(red)")
-    WebElement addToCart_item2;
+   // @FindBy(id = "add-to-cart-test.allthethings()-t-shirt-(red)")
+   // WebElement addToCart_item2;
     @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
     WebElement ViewCartItems_xpath;
 
@@ -39,7 +39,7 @@ public class HomePage {
     public void clickAddToCart() {
         addToCart_id.click();
     }
-    public void clickAddToCart2(){addToCart_item2.click();}
+    //public void clickAddToCart2(){addToCart_item2.click();}
 
     //Click cart icon to view items added
     public void clickCart(){
