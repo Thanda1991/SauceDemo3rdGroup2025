@@ -57,9 +57,11 @@ public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems(); }
 @Test(dependsOnMethods = "verifycheckoutDetails")
 public void EnterName(){checkOut.EnterName(readFromFile.firstname);}
 
+@Test(dependsOnMethods = "EnterName")
+public void EnterLastName(){checkOut.EnterLastName(readFromFile.lastname);}
 
-
-
+ @Test(dependsOnMethods = "EnterLastName")
+public void EnterPostalCode(){checkOut.EnterPostalCode(readFromFile.postalcode);}
 
 
  @AfterTest

@@ -38,6 +38,21 @@ public void verifycheckoutDetails(){
 public void EnterName(String firstname){
    firstName_xpath.sendKeys(firstname); }
 
+
+public  void EnterLastName(String lastname) {
+   lastName_xpath.sendKeys(lastname);
+}
+
+public void EnterPostalCode(String postalcode)
+{postalCode_xpath.sendKeys(postalcode);
+
+}
+
+
+
+
+
+
    }
 
 
