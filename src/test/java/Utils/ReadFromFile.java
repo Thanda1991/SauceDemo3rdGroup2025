@@ -2,6 +2,7 @@ package Utils;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,7 +10,13 @@ import java.io.IOException;
 
 public class ReadFromFile {
 
-    private static String testData = System.getProperty("user.dir") +"/src/test/java/TestData/data.xlsx";
+    private static String testData = System.getProperty("user.dir") + "/src/test/java/TestData/data.xlsx";
+
+//    @Test
+//    public void test()
+//    {
+//        System.out.println("Path is:"+testData);
+//    }
 
     static FileInputStream fs;
 

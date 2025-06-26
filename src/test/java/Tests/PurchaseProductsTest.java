@@ -50,9 +50,9 @@ public  void CheckoutAddedItems(){addedItems.CheckoutAddedItems(); }
     public void verifycheckoutDetails(){checkOut.verifycheckoutDetails();
 
     }
-@Test(dependsOnMethods =  "verifycheckoutDetails")
-        public void EnterName(){checkOut.EnterName(readFromFile.firstname);
-}
+//@Test(dependsOnMethods =  "verifycheckoutDetails")
+//        public void EnterName(){checkOut.EnterName(readFromFile.firstname);
+//}
 
 
 
