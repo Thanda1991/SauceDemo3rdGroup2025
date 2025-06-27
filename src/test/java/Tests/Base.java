@@ -15,8 +15,8 @@ public class Base {
 
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-    AddedItems addedItems = PageFactory.initElements(driver,AddedItems.class);
-    CheckOut checkOut = PageFactory.initElements(driver,CheckOut.class);
+    AddedItems addedItems = PageFactory.initElements(driver, AddedItems.class);
+    CheckOut checkOut = PageFactory.initElements(driver, CheckOut.class);
     ReadFromFile readFromFile = new ReadFromFile();
 
 

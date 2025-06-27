@@ -48,6 +48,14 @@ public void EnterPostalCode(String postalcode)
 
 }
 
+public void ClickContBtn() {Continue_btn_xpath.click();
+
+   }
+
+
+
+
+
 
 
 

@@ -31,19 +31,19 @@ public class PurchaseProductsTest extends Base {
     }
 
     //@Test(Priority = 3) //Adding the item to the card
-    //@Test(dependsOnMethods = "clickAddToCart")
+    // @Test(dependsOnMethods = "clickAddToCart")
     @Test(dependsOnMethods = "verifyProductTitle")
     public void clickAddToCart() {
         homePage.clickAddToCart();
     }
 
-    //    @Test(dependsOnMethods = "ClickCart")
+    //@Test(dependsOnMethods = "ClickCart")
     @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart() {
         homePage.ClickCart();
     }
 
-    //    //@Test(Priority = 4)
+    // @Test(Priority = 4)
     @Test(dependsOnMethods = "ClickCart")
     public void verifyAddedItems() {
         addedItems.verifyAddedItems();
@@ -75,10 +75,17 @@ public class PurchaseProductsTest extends Base {
         checkOut.EnterPostalCode(readFromFile.postalcode);
     }
 
-
-    @AfterTest
-    public void closeBrowser() {
-        driver.quit();
-
+    @Test(dependsOnMethods = "EnterPostalCode")
+    public void ClickContBtn() {
+        checkOut.ClickContBtn();
     }
+
+
+//    @AfterTest
+//    public void closeBrowser() {
+//        driver.quit();
+//
+//    }
+
+
 }
