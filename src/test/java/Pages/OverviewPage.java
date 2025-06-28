@@ -8,25 +8,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CartPage {
+public class OverviewPage {
     WebDriver driver;
 
 
-    @FindBy(xpath = "//span[contains(.,'Your Cart')]")
-    WebElement CartTitle_xpath;
+    @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
+    WebElement overviewTitle_xpath;
 
-    @FindBy(id = "checkout")
-    WebElement CheckOut_id;
-    public CartPage (WebDriver driver) {this.driver = driver;}
+    @FindBy(id = "finish")
+    WebElement finsh_id;
+    public OverviewPage(WebDriver driver) {this.driver = driver;}
 
 
-        public void verifyCartTitle() {
-            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(CartTitle_xpath));
-            CartTitle_xpath.isDisplayed();
+        public void verifyoverviewTitle() {
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(overviewTitle_xpath));
+            overviewTitle_xpath.isDisplayed();
     }
-    public void ClickCheckOutButton() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(CheckOut_id));
-        CheckOut_id.isDisplayed();
+    public void ClickfinishButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(finsh_id));
+        finsh_id.isDisplayed();
     }
 
 

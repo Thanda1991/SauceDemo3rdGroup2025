@@ -12,6 +12,10 @@ import static Utils.BrowserFactory.driver;
 public class TakeScreenshot {
     private static String ScreenshortPath = System.getProperty("user.dir") + "/Screenshorts/";
 
+
+
+
+
     public void TakeScreenshot(WebDriver driver, String screenshotName) {
 
         TakeScreenshot takeScreanshort = (TakeScreenshot) driver;
