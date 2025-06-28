@@ -80,6 +80,17 @@ public class PurchaseProductsTest extends Base {
         checkOut.ClickContBtn();
     }
 
+    @Test(dependsOnMethods = "ClickContBtn")
+    public void CheckedOut(){
+        checkoutoverView.CheckedOut();
+    }
+
+    @Test(dependsOnMethods = "CheckedOut")
+    public void btnfinish(){
+        checkoutoverView.btnfinish();
+    }
+
+
 
 //    @AfterTest
 //    public void closeBrowser() {

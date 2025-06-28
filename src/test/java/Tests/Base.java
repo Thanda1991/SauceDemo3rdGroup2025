@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.AddedItems;
-import Pages.CheckOut;
-import Pages.HomePage;
-import Pages.LoginPage;
+import Pages.*;
 import Utils.BrowserFactory;
 import Utils.ReadFromFile;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +15,6 @@ public class Base {
     AddedItems addedItems = PageFactory.initElements(driver, AddedItems.class);
     CheckOut checkOut = PageFactory.initElements(driver, CheckOut.class);
     ReadFromFile readFromFile = new ReadFromFile();
-
+    CheckOutOverview checkoutoverView = PageFactory.initElements(driver,CheckOutOverview.class);
 
 }
