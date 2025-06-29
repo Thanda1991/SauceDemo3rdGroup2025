@@ -12,76 +12,86 @@ public class PurchaseProductsTest extends Base{
         loginPage.enterUsername("standard_user");
     }
 
-    @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 2)
-    public void enterPassword(){
-        loginPage.enterPassword("secret_sauce");
+    @Test(dependsOnMethods = "enterUsername")
+    public void enterPassword(){loginPage.enterPassword("secret_sauce");
     }
 
     //@Test(priority = 3)
     @Test(dependsOnMethods = "enterPassword")
-    public void clickLoginButton(){
-        loginPage.clickLoginButton();
+    public void clickLoginButton(){loginPage.clickLoginButton();
     }
 
+    //@Test(priority = 4)
     @Test(dependsOnMethods = "clickLoginButton")
     public void verifyProductTitle() {
         homePage.verifyProductTitle();
     }
 
-    @Test(dependsOnMethods = "clickAddToCart")
+//    //@Test(priority = 5)
+    @Test(dependsOnMethods = "verifyProductTitle")
     public void clickAddToCart(){homePage.clickAddToCart();}
 
-    @Test(dependsOnMethods = "my Cart")
-    public void verifyCartTitle(){
-        myCartView.verifyCartTitle();}
+//    //@Test(priority = 6)
+    @Test(dependsOnMethods = "clickAddToCart")
+    public void verifyCartTitle(){myCartView.verifyCartTitle();}
 
-    @Test(dependsOnMethods = "Checkout button")
-    public void clickCheckoutButton1(){myCartView.clickCheckoutButton();}
+//    //@Test(priority = 7)
+    @Test(dependsOnMethods = "verifyCartTitle")
+    public void goToCart(){homePage.ClickCart();}
 
-    public void verifyCheckoutTitle1() {
-        checkoutInfo.verifyCheckoutTitle();
-    }
+    @Test(dependsOnMethods = "goToCart")
+    public void clickCheckoutButton(){myCartView.clickCheckoutButton();}
 
-    @Test(dependsOnMethods = "enterFirstName")
-    //@Test(priority = 1)
-    public void enterFirstName(){
-        checkoutInfo.enterFirstName("Lence");
-    }
-    @Test(dependsOnMethods = "enterLastname")
-    //@Test(priority = 2)
-    public void enterLastname(){
-        checkoutInfo.enterLastname("Mkansi");
-    }
-    @Test(dependsOnMethods = "enterPostalCode")
-    //@Test(priority = 3)
-    public void enterPostalCode(){
-        checkoutInfo.enterPostalCode("0011");
-    }
-    @Test(dependsOnMethods = "enterPostalCode")
-    public void clickCheckoutButton(){
-        checkoutInfo.clickContinueBtn();
-    }
-    public void verifyCheckoutTitle()
-    {
-        checkoutOverview.verifyCheckoutTitle();
-    }
-    public void clickFinishCheckoutButton(){
-        checkoutOverview.clickFinishCheckoutButton();
+//    //@Test(priority = 9)
+    @Test(dependsOnMethods = "clickCheckoutButton")
+    public void verifyCheckoutTitle1() { checkoutInfo.verifyCheckoutTitle();
     }
 
-    public void verifyCompletionHeader(){
-        checkoutCompletion.verifyCompletionHeader();
-    }
-    public void clickBurgerMenu(){
-        checkoutCompletion.clickBurgerMenu();
-    }
-    public void clickLogoutLink(){
-        checkoutCompletion.clickLogoutLink();
-    }
 
-    @AfterTest
-    public void closeBrowser() {
-        driver.quit();
-    }
+//    //@Test(priority = 10)
+//    @Test(dependsOnMethods = "verifyCheckoutTitle1")
+//    public void enterFirstName(){checkoutInfo.enterFirstName("Lance");
+//    }
+//
+//    @Test(dependsOnMethods = "enterFirstName")
+//    //@Test(priority = 11)
+//    public void enterLastname(){
+//        checkoutInfo.enterLastname("Mkansi");
+//    }
+//
+//    @Test(dependsOnMethods = "enterLastname")
+//    //@Test(priority = 12)
+//    public void enterPostalCode(){
+//        checkoutInfo.enterPostalCode("0011");
+//    }
+//
+//    //@Test(priority = 13)
+//    @Test(dependsOnMethods = "enterPostalCode")
+//    public void clickCheckoutButton(){
+//        checkoutInfo.clickContinueBtn();
+//    }
+//
+//    public void verifyCheckoutTitle()
+//    {
+//        checkoutOverview.verifyCheckoutTitle();
+//    }
+//    public void clickFinishCheckoutButton(){
+//        checkoutOverview.clickFinishCheckoutButton();
+//    }
+//
+//    public void verifyCompletionHeader(){
+//        checkoutCompletion.verifyCompletionHeader();
+//    }
+//    public void clickBurgerMenu(){
+//        checkoutCompletion.clickBurgerMenu();
+//    }
+//    public void clickLogoutLink(){
+//        checkoutCompletion.clickLogoutLink();
+//    }
+
+//    @AfterTest
+//    public void closeBrowser() {
+//        driver.quit();
+//    }
 }

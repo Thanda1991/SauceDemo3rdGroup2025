@@ -13,8 +13,8 @@ public class CheckoutInfo {
 
     @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
     WebElement checkoutInfo_xpath;
-    @FindBy(id = "first-name")
-    WebElement firstName_id;
+    @FindBy(xpath= "xpath=//input[@id='first-name']")
+    WebElement firstName_xpath;
     @FindBy(id = "last-name")
     WebElement lastName_id;
     @FindBy(id = "postal-code")
@@ -31,8 +31,9 @@ public class CheckoutInfo {
         checkoutInfo_xpath.isDisplayed();
     }
     public void enterFirstName(String firstname) {
-        firstName_id.sendKeys(firstname);
+        firstName_xpath.sendKeys(firstname);
     }
+
     public void enterLastname(String lastname) {
         lastName_id.sendKeys(lastname);
     }
