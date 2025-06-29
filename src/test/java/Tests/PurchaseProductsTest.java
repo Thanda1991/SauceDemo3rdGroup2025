@@ -2,7 +2,7 @@ package Tests;
 
 import Utils.TakeScreenshot;
 import net.bytebuddy.build.Plugin;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TakesScreenshot;;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ public class PurchaseProductsTest extends Base{
     //@Test(priority = 1)
     public void enterPassword(){
         loginPage.enterPassword(readFromFile.password);
-        TakeScreenshot.takeScreenshot(driver, "LoginPage");
+        takeScreenshot.takeScreenshot(driver, "LoginPage");
     }
 
     //@Test(priority = 2)

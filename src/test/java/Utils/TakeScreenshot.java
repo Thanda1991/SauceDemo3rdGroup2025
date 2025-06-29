@@ -18,7 +18,7 @@ public class TakeScreenshot {
 
     public void TakeScreenshot(WebDriver driver, String screenshotName) {
 
-        TakeScreenshot takeScreanshort = (TakeScreenshot) driver;
+        TakeScreenshot takeScreenshot = (TakeScreenshot) driver;
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File dest = new File(ScreenshortPath + screenshotName + ".png");
         try {
