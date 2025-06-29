@@ -12,19 +12,23 @@ public class CartPage {
 
     WebDriver driver;
 
-    @FindBy(xpath = "//span[contains(.,'Your Cart')]")
+    @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
     WebElement yourCartTitle_Xpath;
 
     @FindBy(id = "checkout")
-    WebElement clickCheckOutButton_id;
-
+    WebElement clickCheckOutButton;
+    public CartPage(WebDriver driver)
+    {
+        this.driver = driver;
+    }
     public void verifyYourCartTitle() {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(yourCartTitle_Xpath));
         yourCartTitle_Xpath.isDisplayed();
     }
 
-    public void clickOnCheckOutButton(){
-        clickCheckOutButton_id.click();
+    public void clickOnCheckOutButton()
+    {
+        clickCheckOutButton.click();
     }
 
 

@@ -38,16 +38,16 @@ public class PurchaseProductsTest extends Base{
         homePage.clickAddToCart();
     }
 
-    @Test(dependsOnMethods = "clickAddToCart")
+    /*@Test(dependsOnMethods = "clickAddToCart")
     public void verifyRemoveButton(){
 
        // homePage.verifyRemoveButton();
-    }
+    }*/
 
-    @Test(dependsOnMethods = "verifyRemoveButton")
+    @Test(dependsOnMethods = "clickAddToCart")
     public void clickOnCart(){
 
-       // homePage.clickOnCart();
+       homePage.ClickCart();
     }
 
     @Test(dependsOnMethods = "clickOnCart")
@@ -57,14 +57,14 @@ public class PurchaseProductsTest extends Base{
     }
 
     @Test(dependsOnMethods = "verifyYourCartTitle")
-    public void clickOnCheckOutButton(){
-
+    public void ClickOnCheckOutButton()
+    {
         cartPage.clickOnCheckOutButton();
     }
 
-    @Test(dependsOnMethods = "clickOnCheckOutButton")
-    public void verifyYourInformationLabel(){
-
+    @Test(dependsOnMethods = "ClickOnCheckOutButton")
+    public void verifyYourInformationLabel()
+    {
         checkOutInformationPage.verifyYourInformationLabel();
     }
 
