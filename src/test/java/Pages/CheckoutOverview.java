@@ -12,13 +12,13 @@ public class CheckoutOverview {
     WebDriver driver;
 
     @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
-    WebElement checkoutTitle_xpath;
+    WebElement verifyOverviewTitle_xpath;
     @FindBy(id = "finish")
     WebElement finishCheckout_id;
 
-    public void verifyCheckoutTitle() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(checkoutTitle_xpath));
-        checkoutTitle_xpath.isDisplayed();
+    public void verifyOverviewTitle() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(verifyOverviewTitle_xpath));
+        verifyOverviewTitle_xpath.isDisplayed();
     }
     public void clickFinishCheckoutButton() {
 

@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.*;
 import Utils.BrowserFactory;
+import Utils.ReadFromFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,5 +15,6 @@ public class Base {
     MyCartView myCartView = PageFactory.initElements(driver, MyCartView.class);
     CheckoutInfo checkoutInfo = PageFactory.initElements(driver, CheckoutInfo.class );
     CheckoutOverview checkoutOverview = PageFactory.initElements(driver, CheckoutOverview.class);
-    CheckoutCompletion checkoutCompletion = PageFactory.initElements(driver, CheckoutCompletion.class);
+    ReadFromFile readFromFile = new ReadFromFile();
+
 }

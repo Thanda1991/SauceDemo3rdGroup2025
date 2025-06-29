@@ -11,7 +11,7 @@ import java.io.IOException;
 @Test
 public class ReadFromFile {
 
-    private static String testData = System.getProperty("user.dir") +"/src/test/java/TestData/data.xlsx";
+    private static String testData = System.getProperty("user.dir") + "/src/test/java/TestData/data.xlsx";
 
     static FileInputStream fs;
 
@@ -38,9 +38,14 @@ public class ReadFromFile {
 
     public static String username = sheet.getRow(1).getCell(0).getStringCellValue();
     public static String password = sheet.getRow(1).getCell(1).getStringCellValue();
+    public static String firstname = sheet2.getRow(1).getCell(0).getStringCellValue();
+    public static String lastname = sheet2.getRow(1).getCell(1).getStringCellValue();
+    public static String postalcode = sheet2.getRow(1).getCell(2).getStringCellValue();
+
 
     @Test
-    public void test(){
-        System.out.println("Directory is: "+testData);
+    public void test() {
+        System.out.println("Directory is " + testData);
+
     }
 }

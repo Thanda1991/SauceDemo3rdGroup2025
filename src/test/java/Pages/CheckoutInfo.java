@@ -13,7 +13,7 @@ public class CheckoutInfo {
 
     @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
     WebElement checkoutInfo_xpath;
-    @FindBy(xpath= "xpath=//input[@id='first-name']")
+    @FindBy(xpath= "//input[@id='first-name']")
     WebElement firstName_xpath;
     @FindBy(id = "last-name")
     WebElement lastName_id;
@@ -26,10 +26,10 @@ public class CheckoutInfo {
 
         this.driver = driver;
     }
-    public void verifyCheckoutTitle() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(checkoutInfo_xpath));
-        checkoutInfo_xpath.isDisplayed();
-    }
+//    public void verifyCheckoutTitle() {
+//        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(checkoutInfo_xpath));
+//        checkoutInfo_xpath.isDisplayed();
+//    }
     public void enterFirstName(String firstname) {
         firstName_xpath.sendKeys(firstname);
     }

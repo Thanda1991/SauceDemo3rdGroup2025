@@ -4,22 +4,24 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 @Test
-public class PurchaseProductsTest extends Base{
+public class PurchaseProductsTest extends Base {
 
     //@Test(priority = 1)
     @Test
-    public void enterUsername(){
-        loginPage.enterUsername("standard_user");
+    public void enterUsername() {
+        loginPage.enterUsername(readFromFile.username);
     }
 
     //@Test(priority = 2)
     @Test(dependsOnMethods = "enterUsername")
-    public void enterPassword(){loginPage.enterPassword("secret_sauce");
+    public void enterPassword() {
+        loginPage.enterPassword(readFromFile.password);
     }
 
     //@Test(priority = 3)
     @Test(dependsOnMethods = "enterPassword")
-    public void clickLoginButton(){loginPage.clickLoginButton();
+    public void clickLoginButton() {
+        loginPage.clickLoginButton();
     }
 
     //@Test(priority = 4)
@@ -28,54 +30,66 @@ public class PurchaseProductsTest extends Base{
         homePage.verifyProductTitle();
     }
 
-//    //@Test(priority = 5)
+    //    //@Test(priority = 5)
     @Test(dependsOnMethods = "verifyProductTitle")
-    public void clickAddToCart(){homePage.clickAddToCart();}
+    public void clickAddToCart() {
+        homePage.clickAddToCart();
+    }
 
-//    //@Test(priority = 6)
+    //    //@Test(priority = 6)
     @Test(dependsOnMethods = "clickAddToCart")
-    public void verifyCartTitle(){myCartView.verifyCartTitle();}
+    public void verifyCartTitle() {
+        myCartView.verifyCartTitle();
+    }
 
-//    //@Test(priority = 7)
+    //    //@Test(priority = 7)
     @Test(dependsOnMethods = "verifyCartTitle")
-    public void goToCart(){homePage.ClickCart();}
+    public void goToCart() {
+        homePage.ClickCart();
+    }
 
     @Test(dependsOnMethods = "goToCart")
-    public void clickCheckoutButton(){myCartView.clickCheckoutButton();}
+    public void clickCheckoutButton() {
+        myCartView.clickCheckoutButton();
+    }
 
-//    //@Test(priority = 9)
     @Test(dependsOnMethods = "clickCheckoutButton")
-    public void verifyCheckoutTitle1() { checkoutInfo.verifyCheckoutTitle();
+    public void enterFirstName() {
+        checkoutInfo.enterFirstName(readFromFile.firstname);
     }
 
 
-//    //@Test(priority = 10)
-//    @Test(dependsOnMethods = "verifyCheckoutTitle1")
-//    public void enterFirstName(){checkoutInfo.enterFirstName("Lance");
-//    }
-//
-//    @Test(dependsOnMethods = "enterFirstName")
-//    //@Test(priority = 11)
-//    public void enterLastname(){
-//        checkoutInfo.enterLastname("Mkansi");
-//    }
-//
-//    @Test(dependsOnMethods = "enterLastname")
-//    //@Test(priority = 12)
-//    public void enterPostalCode(){
-//        checkoutInfo.enterPostalCode("0011");
-//    }
-//
-//    //@Test(priority = 13)
-//    @Test(dependsOnMethods = "enterPostalCode")
-//    public void clickCheckoutButton(){
-//        checkoutInfo.clickContinueBtn();
-//    }
-//
-//    public void verifyCheckoutTitle()
+    @Test(dependsOnMethods = "enterFirstName")
+    public void enterLastname() {
+        checkoutInfo.enterLastname(readFromFile.lastname);
+    }
+
+    @Test(dependsOnMethods = "enterLastname")
+    public void enterPostalCode() {
+        checkoutInfo.enterPostalCode(readFromFile.postalcode);
+    }
+
+    @Test(dependsOnMethods = "enterPostalCode")
+    public void clickContinueBtn(){
+        checkoutInfo.clickContinueBtn();
+    }
+
+    @Test(dependsOnMethods = "clickContinueBtn")
+    public void verifyOverviewTitle(){
+        checkoutOverview.verifyOverviewTitle();
+    }
+
+    @Test(dependsOnMethods = "verifyOverviewTitle")
+    public void clickFinishCheckoutButton(){
+        checkoutOverview.clickFinishCheckoutButton();
+    }
+
+
+//    public void verifyCheckoutCompleteTitle()
 //    {
-//        checkoutOverview.verifyCheckoutTitle();
+//        checkoutOverview.verifyCheckoutCompleteTitle();
 //    }
+//    @Test(dependsOnMethods = "enterPostalCode")
 //    public void clickFinishCheckoutButton(){
 //        checkoutOverview.clickFinishCheckoutButton();
 //    }
