@@ -20,5 +20,5 @@ public class Base {
     CheckoutPage checkoutPage = PageFactory.initElements(driver, CheckoutPage.class);
     ReadFromFile readFromFile = new ReadFromFile();
     OverviewPage overviewPage = PageFactory.initElements(driver, OverviewPage.class);
-    TakeScreenshot takeScreenshot = new TakeScreenshot();
+    TakeScreenshot takessScreenshot = new TakeScreenshot();
 }
