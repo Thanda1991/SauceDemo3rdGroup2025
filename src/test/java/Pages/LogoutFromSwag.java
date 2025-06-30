@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class CheckoutCompletion {
+public class LogoutFromSwag {
     WebDriver driver;
 
     @FindBy(xpath = "//*[@id=\"checkout_complete_container\"]/h2")
@@ -23,11 +23,17 @@ public class CheckoutCompletion {
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(completionHeader_xpath));
         completionHeader_xpath.isDisplayed();
     }
+
     public void clickBurgerMenu() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(locateBurgerMenu_id));
         locateBurgerMenu_id.click();
+
     }
+
     public void clickLogoutLink() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(logoutLink_id));
         logoutLink_id.click();
+
     }
 
 }

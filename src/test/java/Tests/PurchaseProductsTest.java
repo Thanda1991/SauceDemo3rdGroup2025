@@ -70,42 +70,38 @@ public class PurchaseProductsTest extends Base {
     }
 
     @Test(dependsOnMethods = "enterPostalCode")
-    public void clickContinueBtn(){
+    public void clickContinueBtn() {
         checkoutInfo.clickContinueBtn();
     }
 
     @Test(dependsOnMethods = "clickContinueBtn")
-    public void verifyOverviewTitle(){
+    public void verifyOverviewTitle() {
         checkoutOverview.verifyOverviewTitle();
     }
 
     @Test(dependsOnMethods = "verifyOverviewTitle")
-    public void clickFinishCheckoutButton(){
+    public void clickFinishCheckoutButton() {
         checkoutOverview.clickFinishCheckoutButton();
     }
 
+    @Test(dependsOnMethods = "clickFinishCheckoutButton")
+    public void verifyCompletionHeader() {
+        logoutFromSwag.verifyCompletionHeader();
+    }
 
-//    public void verifyCheckoutCompleteTitle()
-//    {
-//        checkoutOverview.verifyCheckoutCompleteTitle();
-//    }
-//    @Test(dependsOnMethods = "enterPostalCode")
-//    public void clickFinishCheckoutButton(){
-//        checkoutOverview.clickFinishCheckoutButton();
-//    }
-//
-//    public void verifyCompletionHeader(){
-//        checkoutCompletion.verifyCompletionHeader();
-//    }
-//    public void clickBurgerMenu(){
-//        checkoutCompletion.clickBurgerMenu();
-//    }
-//    public void clickLogoutLink(){
-//        checkoutCompletion.clickLogoutLink();
-//    }
+    @Test(dependsOnMethods = "verifyCompletionHeader")
+    public void clickBurgerMenu() {
+        logoutFromSwag.clickBurgerMenu();
+    }
 
-//    @AfterTest
-//    public void closeBrowser() {
-//        driver.quit();
-//    }
+    @Test(dependsOnMethods = "clickBurgerMenu")
+    public void clickLogoutLink() {
+        logoutFromSwag.clickLogoutLink();
+    }
+
+
+    @AfterTest
+    public void closeBrowser() {
+        driver.quit();
+    }
 }
