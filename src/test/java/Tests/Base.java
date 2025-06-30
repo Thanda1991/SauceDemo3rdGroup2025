@@ -3,6 +3,7 @@ package Tests;
 import Pages.*;
 import Utils.BrowserFactory;
 import Utils.ReadFromFile;
+import Utils.TakesScreenshots;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,5 +18,6 @@ public class Base {
     CheckoutOverview checkoutOverview = PageFactory.initElements(driver, CheckoutOverview.class);
     LogoutFromSwag logoutFromSwag = PageFactory.initElements(driver, LogoutFromSwag.class);
     ReadFromFile readFromFile = new ReadFromFile();
+    TakesScreenshots takesScreenshots = new TakesScreenshots();
 
 }
