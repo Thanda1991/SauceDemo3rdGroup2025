@@ -11,6 +11,7 @@ public class PurchaseProductsTest extends Base{
 
     public void enterUsername(){
         loginPage.enterUsername(readFromFile.username);
+
     }
 
     @Test(dependsOnMethods = "enterUsername")
@@ -33,6 +34,7 @@ public class PurchaseProductsTest extends Base{
 
     @Test (dependsOnMethods = "verifyProductTitle")
     public void clickAddToCart(){homePage.clickAddToCart();}
+
 
     @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart(){homePage.ClickCart();}
