@@ -1,9 +1,12 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class StartChrome {
 
@@ -11,12 +14,13 @@ public class StartChrome {
 
     @Test
     public void verifyLoginSuccess() throws InterruptedException {
-        driver = new ChromeDriver();
+  //      driver = new ChromeDriver();
 //        driver= new FirefoxDriver();
-//        driver= new EdgeDriver();
+        driver= new EdgeDriver();
 //        driver= new SafariDriver();
         driver.manage().window().maximize();
-        driver.get("https://winsytemsintl.atlassian.net/browse/ITB-6494/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         Thread.sleep(1000);
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -26,9 +30,6 @@ public class StartChrome {
         Assert.assertEquals(ProductText, "Products");
 
         driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).isDisplayed();
-
-
-
 
     }
 
