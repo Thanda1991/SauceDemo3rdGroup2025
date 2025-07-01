@@ -1,5 +1,6 @@
 package Tests;
 
+import Utils.ReadFromFile;
 import net.bytebuddy.build.Plugin;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -8,13 +9,14 @@ import org.testng.annotations.Test;
 public class PurchaseProductsTest extends Base{
 
     public void enterUsername(){
-        loginPage.enterUsername(readFromFile.username);
+        loginPage.enterUsername(ReadFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
     public void enterPassword(){
-        loginPage.enterPassword(readFromFile.password);
+        loginPage.enterPassword(ReadFromFile.password);
+        takeScreenshots.takeScreenshot(driver, "LoginPage");
     }
 
     //@Test(priority = 2)
@@ -26,6 +28,7 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "clickLoginButton")
     public void verifyProductTitle() {
         homePage.verifyProductTitle();
+        takeScreenshots.takeScreenshot(driver, "ProductPage");
     }
 
     @Test (dependsOnMethods = "verifyProductTitle")
@@ -40,17 +43,17 @@ public class PurchaseProductsTest extends Base{
 
     @Test(dependsOnMethods = "clickCheckoutTests")
     public void enterFirstName() {
-        yourInfoPage.enterFirstName(readFromFile.firstName);
+        yourInfoPage.enterFirstName(ReadFromFile.firstName);
     }
 
     @Test(dependsOnMethods = "enterFirstName")
     public void enterLastName() {
-        yourInfoPage.enterLastName(readFromFile.lastName);
+        yourInfoPage.enterLastName(ReadFromFile.lastName);
     }
 
     @Test(dependsOnMethods = "enterLastName")
     public void enterPostalCode() {
-        yourInfoPage.enterPostalCode(readFromFile.postalCode);
+        yourInfoPage.enterPostalCode(ReadFromFile.postalCode);
     }
 
     @Test(dependsOnMethods = "enterPostalCode")
