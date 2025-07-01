@@ -1,31 +1,38 @@
 package Pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-import java.time.Duration;
+import static Utils.HighlightElements.highlight;
 
 public class CartPage {
+    @FindBy(id ="title")
+    WebElement cartTitle;
+    @FindBy(xpath= "/html/body/div/div/div/div[2]/div/div[2]/button[2]")
+    WebElement checkout;
+    @FindBy(id = "title")
+    WebElement getCartTitle;
 
-    WebDriver driver;
 
-    @FindBy(xpath = "//span[contains(.,'Your Cart')]")
-    WebElement yourCartTitle_Xpath;
 
-    @FindBy(id = "checkout")
-    WebElement clickCheckOutButton_id;
+    public void VerifyCartTitle(){
+        String actualTitle = cartTitle.getText();
 
-    public void verifyYourCartTitle() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(yourCartTitle_Xpath));
-        yourCartTitle_Xpath.isDisplayed();
+        Assert.assertTrue(actualTitle.contains("Your Cart"),
+                "Expected title to contain 'Your Cart' but got: " + actualTitle);
+        highlight(getCartTitle);
     }
 
-    public void clickOnCheckOutButton(){
-        clickCheckOutButton_id.click();
-    }
+
+public void clickCheckout(){
+    checkout.click();
+}
+
+
+
+
+
 
 
 }

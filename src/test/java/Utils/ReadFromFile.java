@@ -1,64 +1,58 @@
 package Utils;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class ReadFromFile {
 
-    private static String testData = System.getProperty("user.dir")+"/src/test/java/TestData/data.xlsx";
+    private static final String EXCEL_PATH = "data.xlsx";  // should be in src/test/resources
 
-    static FileInputStream fs;
-
-    static {
-        try {
-            fs = new FileInputStream(testData);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    static XSSFWorkbook workbook;
+    public static String username;
+    public static String password;
+    public static String firstname;
+    public static String lastname;
+    public static String postalcode;
 
     static {
-        try {
-            workbook = new XSSFWorkbook(fs);
+        try (InputStream is = ReadFromFile.class.getClassLoader().getResourceAsStream(EXCEL_PATH)) {
+            if (is == null) {
+                throw new RuntimeException("Could not find resource: " + EXCEL_PATH);
+            }
+
+            XSSFWorkbook workbook = new XSSFWorkbook(is);
+            XSSFSheet loginSheet = workbook.getSheet("login");
+            XSSFSheet userDetailsSheet = workbook.getSheet("User_details");
+
+            username   = getCellValue(loginSheet.getRow(1).getCell(0));
+            password   = getCellValue(loginSheet.getRow(1).getCell(1));
+            firstname  = getCellValue(userDetailsSheet.getRow(1).getCell(0));
+            lastname   = getCellValue(userDetailsSheet.getRow(1).getCell(1));
+            postalcode = getCellValue(userDetailsSheet.getRow(1).getCell(2));
+
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to load Excel from resources: " + EXCEL_PATH, e);
         }
     }
 
-    static XSSFSheet sheet = workbook.getSheet("login");
-
-    public static String username = sheet.getRow(1).getCell(0).getStringCellValue();
-
-    public static String password = sheet.getRow(1).getCell(1).getStringCellValue();
-
-   static XSSFSheet sheet2 = workbook.getSheet("user_details");
-
-   public static String firstName = sheet2.getRow(1).getCell(0).getStringCellValue();
-
-   public static String lastName = sheet2.getRow(1).getCell(1).getStringCellValue();
-
-   public static String postalCode = sheet2.getRow(1).getCell(2).getRawValue();
-
-
-
-
-    @Test
-    public void test(){
-        System.out.println("username is "+username);
-        System.out.println("password is "+password);
-        System.out.println("username is "+firstName);
-        System.out.println("password is "+lastName);
-        System.out.println("password is "+postalCode);
-
-
-
+    private static String getCellValue(Cell cell) {
+        if (cell == null) return "";
+        switch (cell.getCellType()) {
+            case STRING:
+                return cell.getStringCellValue();
+            case NUMERIC:
+                return String.valueOf((long) cell.getNumericCellValue()); // Avoid ".0" for integers
+            case BOOLEAN:
+                return String.valueOf(cell.getBooleanCellValue());
+            case FORMULA:
+                return cell.getCellFormula();
+            case BLANK:
+                return "";
+            default:
+                return "";
+        }
     }
-
 }
