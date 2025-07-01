@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static Utils.HighlightElements.highlight;
+
 public class CartPage {
     @FindBy(id ="title")
     WebElement cartTitle;
@@ -19,6 +21,7 @@ public class CartPage {
 
         Assert.assertTrue(actualTitle.contains("Your Cart"),
                 "Expected title to contain 'Your Cart' but got: " + actualTitle);
+        highlight(getCartTitle);
     }
 
 

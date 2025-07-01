@@ -17,6 +17,7 @@ public class PurchaseProductsTest extends Base {
     public void enterPassword() throws InterruptedException {
         // Step 2: Enter password after username
         loginPage.enterPassword(ReadFromFile.password);
+        takesScreenshots.takesScreenshot(driver,"LoginPage");
         Thread.sleep(1000);
     }
 
@@ -31,6 +32,7 @@ public class PurchaseProductsTest extends Base {
     public void verifyProductTitle() throws InterruptedException {
         // Step 4: Confirm user is on products page
         homePage.verifyProductTitle();
+        takesScreenshots.takesScreenshot(driver,"HomePage");
         Thread.sleep(1000);
     }
 
@@ -39,6 +41,7 @@ public class PurchaseProductsTest extends Base {
         // Step 5: Add item to cart and verify 'Remove' button appears
         homePage.ClickAddToCart();
         homePage.VerifyRemoveButton();
+        takesScreenshots.takesScreenshot(driver,"HomePage");
         Thread.sleep(1000);
     }
 
@@ -60,6 +63,7 @@ public class PurchaseProductsTest extends Base {
     public void verifyCheckoutTitle() throws InterruptedException {
         // Step 8: Verify checkout information page title
         checkoutPage.VerifyCheckoutTitle();
+        takesScreenshots.takesScreenshot(driver,"checkoutPage");
         Thread.sleep(1000);
     }
 
@@ -83,6 +87,7 @@ public class PurchaseProductsTest extends Base {
     public void verifyCheckoutOverviewPage() throws InterruptedException {
         // Step 11: Verify 'Checkout: Overview' page is displayed
         checkoutoverviewPage.VerifyCheckoutOverviewTitle();
+        takesScreenshots.takesScreenshot(driver,"checkoutoverviewPage");
         Thread.sleep(1000);
     }
 
@@ -97,6 +102,7 @@ public class PurchaseProductsTest extends Base {
     public void verifyCheckoutComplete() throws InterruptedException {
         // Step 13: Confirm the order completion page is displayed
         checkoutcompletePage.VerifyCheckoutComplete();
+        takesScreenshots.takesScreenshot(driver,"checkoutcompletePage");
         Thread.sleep(1000);
     }
 
@@ -111,6 +117,7 @@ public class PurchaseProductsTest extends Base {
     public void verifyBackHome() throws InterruptedException {
         // Step 15: Verify navigation back to the products page
         homePage.verifyProductTitle();
+        takesScreenshots.takesScreenshot(driver,"HomePage");
         Thread.sleep(1000);
     }
 

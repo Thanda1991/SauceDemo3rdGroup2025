@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static Utils.HighlightElements.highlight;
+
 public class CheckoutOverviewPage {
     @FindBy(className = "title")
     WebElement checkoutOverviewtitle;
@@ -16,6 +18,7 @@ public class CheckoutOverviewPage {
         String actualTitle = checkoutOverviewtitle.getText();
         Assert.assertTrue(actualTitle.contains("Checkout: Overview"),
                 "Expected title to contain 'Checkout: Overview' but got: " + actualTitle);
+        highlight(checkoutOverviewtitle);
     }
 
     public void ClickFinishButton(){

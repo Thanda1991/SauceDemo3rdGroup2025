@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static Utils.HighlightElements.highlight;
+
 public class LoginPage {
 
     WebDriver driver;
@@ -31,6 +33,7 @@ public class LoginPage {
     }
 
     public void clickLoginButton() {
+        highlight(loginButton_id);
         loginButton_id.click();
     }
 
