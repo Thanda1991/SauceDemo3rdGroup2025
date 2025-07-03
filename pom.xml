@@ -47,6 +47,12 @@
             <artifactId>extentreports</artifactId>
             <version>5.0.9</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v128</artifactId>
+            <version>4.25.0</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
