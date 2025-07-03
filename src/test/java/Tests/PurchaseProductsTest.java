@@ -18,7 +18,7 @@ public class PurchaseProductsTest extends Base{
     //@Test(priority = 1)
     public void enterPassword(){
         loginPage.enterPassword(readFromFile.password);
-
+        takeScreenshot.takesScreenshot(driver, "loginPage");
     }
 
     //@Test(priority = 2)
@@ -33,7 +33,9 @@ public class PurchaseProductsTest extends Base{
     }
 
     @Test (dependsOnMethods = "verifyProductTitle")
-    public void clickAddToCart(){homePage.clickAddToCart();}
+    public void clickAddToCart(){homePage.clickAddToCart();
+    takeScreenshot.takesScreenshot(driver, "HomePage");
+    }
 
 
     @Test(dependsOnMethods = "clickAddToCart")
@@ -50,10 +52,12 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "enterFirstName")
     public void enterLastName() {
         checkoutPage.enterLastName(readFromFile.LastName);
+
     }
     @Test(dependsOnMethods = "enterLastName")
     public void enterPostalCode() {
         checkoutPage.enterPostalCode(readFromFile.PostalCode);
+        takeScreenshot.takesScreenshot(driver,"CheckoutPage");
     }
     @Test(dependsOnMethods = "enterPostalCode")
     public  void  ClickContinue() {
@@ -62,10 +66,20 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "ClickContinue")
     public void verifyOverviewTitle() {
         overviewPage.verifyoverviewTitle();
+        takeScreenshot.takesScreenshot(driver,"OverviewPage");
     }
     @Test(dependsOnMethods = "verifyOverviewTitle")
     public void ClickFinishButton() {
         overviewPage.ClickfinishButton();
+    }
+    @Test(dependsOnMethods = "ClickFinishButton")
+    public void VerifyCompleteTitle() {
+        completePage.VerifyCompleteTitle();
+        takeScreenshot.takesScreenshot(driver, "CompletePage");
+    }
+    @Test(dependsOnMethods = "VerifyCompleteTitle")
+    public  void ClickBackToProducts() {
+        completePage.clickBackToProducts();
     }
     @AfterTest
     public void closeBrowser() {

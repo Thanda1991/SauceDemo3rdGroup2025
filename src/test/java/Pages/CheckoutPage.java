@@ -54,4 +54,5 @@ public class CheckoutPage {
     public void clickContinue() {
         Continue_id.click();
     }
+
 }

@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.CheckoutPage;
-import Pages.HomePage;
-import Pages.LoginPage;
-import Pages.OverviewPage;
+import Pages.*;
 import Utils.BrowserFactory;
 import Utils.ReadFromFile;
 import Utils.TakeScreenshot;
@@ -20,5 +17,6 @@ public class Base {
     CheckoutPage checkoutPage = PageFactory.initElements(driver, CheckoutPage.class);
     ReadFromFile readFromFile = new ReadFromFile();
     OverviewPage overviewPage = PageFactory.initElements(driver, OverviewPage.class);
-    TakeScreenshot takessScreenshot = new TakeScreenshot();
+    TakeScreenshot takeScreenshot = new TakeScreenshot();
+    CompletePage completePage=PageFactory.initElements(driver, CompletePage.class);
 }
