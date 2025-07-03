@@ -1,102 +1,132 @@
 package Tests;
 
-import Pages.AddedItems;
-import Pages.CheckOut;
-import net.bytebuddy.build.Plugin;
+import Utils.ReadFromFile;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 @Test
-public class PurchaseProductsTest extends Base {
+public class PurchaseProductsTest extends Base{
 
-    public void enterUsername() {
-        loginPage.enterUsername("standard_user");
+    public void enterUsername(){
+
+        loginPage.enterUsername(ReadFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
-    public void enterPassword() {
-        loginPage.enterPassword("secret_sauce");
+    public void enterPassword(){
+
+        loginPage.enterPassword(ReadFromFile.password);
     }
 
     //@Test(priority = 2)
     @Test(dependsOnMethods = "enterPassword")
-    public void clickLoginButton() {
+    public void clickLoginButton(){
+
         loginPage.clickLoginButton();
     }
 
     @Test(dependsOnMethods = "clickLoginButton")
     public void verifyProductTitle() {
+
         homePage.verifyProductTitle();
     }
 
-    //@Test(Priority = 3) //Adding the item to the card
-    // @Test(dependsOnMethods = "clickAddToCart")
     @Test(dependsOnMethods = "verifyProductTitle")
-    public void clickAddToCart() {
+    public void clickAddToCart(){
+
         homePage.clickAddToCart();
     }
 
-    //@Test(dependsOnMethods = "ClickCart")
     @Test(dependsOnMethods = "clickAddToCart")
-    public void ClickCart() {
-        homePage.ClickCart();
+    public void verifyRemoveButton(){
+
+       // homePage.verifyRemoveButton();
     }
 
-    // @Test(Priority = 4)
-    @Test(dependsOnMethods = "ClickCart")
-    public void verifyAddedItems() {
-        addedItems.verifyAddedItems();
+    @Test(dependsOnMethods = "verifyRemoveButton")
+    public void clickOnCart(){
+
+       // homePage.clickOnCart();
     }
 
-    @Test(dependsOnMethods = "verifyAddedItems")
-    public void CheckoutAddedItems() {
-        addedItems.CheckoutAddedItems();
+    @Test(dependsOnMethods = "clickOnCart")
+    public void verifyYourCartTitle(){
+
+        cartPage.verifyYourCartTitle();
     }
 
-    @Test(dependsOnMethods = "CheckoutAddedItems")
-    public void verifycheckoutDetails() {
-        checkOut.verifycheckoutDetails();
+    @Test(dependsOnMethods = "verifyYourCartTitle")
+    public void clickOnCheckOutButton(){
 
+        cartPage.clickOnCheckOutButton();
     }
 
-    @Test(dependsOnMethods = "verifycheckoutDetails")
-    public void EnterName() {
-        checkOut.EnterName(readFromFile.firstname);
+    @Test(dependsOnMethods = "clickOnCheckOutButton")
+    public void verifyYourInformationLabel(){
+
+        checkOutInformationPage.verifyYourInformationLabel();
     }
 
-    @Test(dependsOnMethods = "EnterName")
-    public void EnterLastName() {
-        checkOut.EnterLastName(readFromFile.lastname);
+    @Test(dependsOnMethods = "verifyYourInformationLabel")
+    public void enterFirstNameYourInformation(){
+
+        checkOutInformationPage.enterFirstNameYourInformation(readFromFile.firstName);
     }
 
-    @Test(dependsOnMethods = "EnterLastName")
-    public void EnterPostalCode() {
-        checkOut.EnterPostalCode(readFromFile.postalcode);
+    @Test(dependsOnMethods = "enterFirstNameYourInformation")
+    public void enterLastNameYourInformation(){
+
+        checkOutInformationPage.enterLastNameYourInformation(readFromFile.lastName);
     }
 
-    @Test(dependsOnMethods = "EnterPostalCode")
-    public void ClickContBtn() {
-        checkOut.ClickContBtn();
+    @Test(dependsOnMethods = "enterLastNameYourInformation")
+    public void enterPostCodeYourInformation(){
+
+        checkOutInformationPage.enterPostCodeYourInformation(readFromFile.postalCode);
     }
 
-    @Test(dependsOnMethods = "ClickContBtn")
-    public void CheckedOut(){
-        checkoutoverView.CheckedOut();
+    @Test(dependsOnMethods = "enterPostCodeYourInformation")
+    public void clickContinueButton(){
+
+        checkOutInformationPage.clickContinueButton();
     }
 
-    @Test(dependsOnMethods = "CheckedOut")
-    public void btnfinish(){
-        checkoutoverView.btnfinish();
+    @Test(dependsOnMethods = "clickContinueButton")
+    public void verifyCheckOutLabel(){
+
+        checkOutOverViewPagePage.verifyCheckOutLabel();
+    }
+    @Test(dependsOnMethods = "verifyCheckOutLabel")
+    public void clickFinishButton() {
+        checkOutOverViewPagePage.clickFinishButton();
+    }
+    @Test(dependsOnMethods = "clickFinishButton")
+    public void verifyThankYouLabel() {
+        checkOutThankYouPage.verifyThankYouLabel();
+    }
+    @Test(dependsOnMethods = "verifyThankYouLabel")
+    public void clickBackHomeButton() {
+        checkOutThankYouPage.clickBackHomeButton();
     }
 
 
+    @Test(dependsOnMethods = "verifyThankYouLabel")
+    public void clickOnBurgerButton() {
 
-//    @AfterTest
-//    public void closeBrowser() {
+       // homePage.clickOnBurgerButton();
+    }
+
+    @Test(dependsOnMethods = "clickOnBurgerButton")
+    public void clickOnLogOut() {
+        //homePage.clickOnLogOut();
+    }
+
+
+    @AfterTest
+    public void closeBrowser() {
 //        driver.quit();
-//
-//    }
+    }
 
 
 }
