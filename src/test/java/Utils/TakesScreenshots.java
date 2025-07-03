@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class TakesScreenshots {
-
     private static String ScreenshotDir = System.getProperty("user.dir") + "/Screenshots/";
 
     public void takesScreenshot(WebDriver driver, String screenshotName) {
@@ -18,7 +17,6 @@ public class TakesScreenshots {
         File destination = new File(ScreenshotDir, screenshotName + ".png");
         try {
             FileUtils.copyFile(src, destination);
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

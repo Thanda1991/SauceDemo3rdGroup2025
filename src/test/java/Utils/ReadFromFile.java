@@ -8,9 +8,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+@Test
 public class ReadFromFile {
 
-    private static String testData = System.getProperty("user.dir")+"/src/test/java/TestData/data.xlsx";
+    private static String testData = System.getProperty("user.dir") + "/src/test/java/TestData/data.xlsx";
 
     static FileInputStream fs;
 
@@ -33,44 +34,18 @@ public class ReadFromFile {
     }
 
     static XSSFSheet sheet = workbook.getSheet("login");
+    static XSSFSheet sheet2 = workbook.getSheet("User_details");
 
     public static String username = sheet.getRow(1).getCell(0).getStringCellValue();
-
     public static String password = sheet.getRow(1).getCell(1).getStringCellValue();
-    public static String firstName = sheet2.getRow(1).getCell(0).getStringCellValue();
-    public static String lastName = sheet2.getRow(1).getCell(1).getStringCellValue();
-    public static String postalCode = sheet2.getRow(1).getCell(2).getStringCellValue();
-
-    @Test
-    public void test(){
-        System.out.println("Username is "+username);
-        System.out.println("Password is "+password);
-        System.out.println("FirstName is "+firstName);
-        System.out.println("LastName is  "+lastName);
-        System.out.println("PostalCode is "+postalCode);
-    }
-
-   static XSSFSheet sheet2 = workbook.getSheet("user_details");
-
-   public static String firstName = sheet2.getRow(1).getCell(0).getStringCellValue();
-
-   public static String lastName = sheet2.getRow(1).getCell(1).getStringCellValue();
-
-   public static String postalCode = sheet2.getRow(1).getCell(2).getRawValue();
-
-
+    public static String firstname = sheet2.getRow(1).getCell(0).getStringCellValue();
+    public static String lastname = sheet2.getRow(1).getCell(1).getStringCellValue();
+    public static String postalcode = sheet2.getRow(1).getCell(2).getStringCellValue();
 
 
     @Test
-    public void test(){
-        System.out.println("username is "+username);
-        System.out.println("password is "+password);
-        System.out.println("username is "+firstName);
-        System.out.println("password is "+lastName);
-        System.out.println("password is "+postalCode);
-
-
+    public void test() {
+        System.out.println("Directory is " + testData);
 
     }
-
 }
