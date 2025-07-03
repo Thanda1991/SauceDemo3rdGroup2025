@@ -38,19 +38,19 @@ public class PurchaseProductsTest extends Base{
         homePage.clickAddToCart();
     }
 
+//    @Test(dependsOnMethods = "clickAddToCart")
+//    public void verifyRemoveButton(){
+//
+//        homePage.verifyRemoveButton();
+//    }
+
     @Test(dependsOnMethods = "clickAddToCart")
-    public void verifyRemoveButton(){
+    public void ClickCart(){
 
-       // homePage.verifyRemoveButton();
+       homePage.ClickCart();
     }
 
-    @Test(dependsOnMethods = "verifyRemoveButton")
-    public void clickOnCart(){
-
-       // homePage.clickOnCart();
-    }
-
-    @Test(dependsOnMethods = "clickOnCart")
+    @Test(dependsOnMethods = "ClickCart")
     public void verifyYourCartTitle(){
 
         cartPage.verifyYourCartTitle();
@@ -114,18 +114,19 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "verifyThankYouLabel")
     public void clickOnBurgerButton() {
 
-       // homePage.clickOnBurgerButton();
+        homePage.clickOnBurgerButton();
     }
 
     @Test(dependsOnMethods = "clickOnBurgerButton")
     public void clickOnLogOut() {
-        //homePage.clickOnLogOut();
+        homePage.clickOnLogOut();
+
     }
 
 
     @AfterTest
     public void closeBrowser() {
-//        driver.quit();
+//     driver.quit();
     }
 
 
