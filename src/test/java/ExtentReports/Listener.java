@@ -12,32 +12,34 @@ public class Listener implements ITestListener {
     private static ExtentReports extent;
     private static ExtentTest extentTest;
 
-    public void onTestStart(ITestResult result) {
+    @Override
+    public void onTestStart(ITestResult result){
         extentTest = extent.createTest(result.getMethod().getMethodName());
     }
 
     @Override
-    public void onTestFailure(ITestResult result) {
-        extentTest.log(Status.FAIL, "Test Case " + result.getMethod().getMethodName() + "Has failed");
+    public void onTestFailure(ITestResult result){
+        extentTest.log(Status.FAIL,"Test Case "+ result.getMethod().getMethodName()+ " has failed");
     }
 
     @Override
-    public void onTestSuccess(ITestResult result) {
-        extentTest.log(Status.PASS, "Test Case " + result.getMethod().getMethodName() + "Has passed");
+    public void onTestSuccess(ITestResult result){
+        extentTest.log(Status.PASS,"Test Case " + result.getMethod().getMethodName()+ " has passed");
     }
 
     @Override
-    public void onTestSkipped(ITestResult result) {
-        extentTest.log(Status.SKIP, "Test Case " + result.getMethod().getMethodName() + "Has skipped");
+    public void onTestSkipped(ITestResult result){
+        extentTest.log(Status.SKIP,"Test Case " + result.getMethod().getMethodName()+ " has been skipped");
     }
 
     @Override
-    public void onFinish(ITestContext result) {
+    public void onFinish(ITestContext result){
         extent.flush();
     }
 
-    public void onStart(ITestContext context) {
+    public void onStart(ITestContext result){
         extent = ExtentReportManager.extentSetup();
     }
+
 
 }

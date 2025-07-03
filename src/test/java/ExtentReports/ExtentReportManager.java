@@ -7,10 +7,9 @@ import java.io.File;
 
 public class ExtentReportManager {
 
-    private static String reportDir=System.getProperty("user.dir") + "/Reports/sauceDemo.html/";
+    private static String reportDir=System.getProperty("user.dir")+"/Reports/sauceDemo.html";
 
     private static ExtentReports extentReports;
-
     private static ExtentSparkReporter extentSparkReporter;
 
     public static ExtentReports extentSetup(){
@@ -22,9 +21,8 @@ public class ExtentReportManager {
         extentSparkReporter.config().setDocumentTitle("Extent Report");
         extentSparkReporter.config().setReportName("Sauce Demo");
 
-        extentReports.setSystemInfo("os", System.getProperty("os.name"));
-        extentReports.setSystemInfo("Exection Machine", System.getProperty("user.name"));
+        extentReports.setSystemInfo("OS",System.getProperty("os.name"));
+        extentReports.setSystemInfo("Exection Machine",System.getProperty("user.name"));
         return extentReports;
     }
-
 }

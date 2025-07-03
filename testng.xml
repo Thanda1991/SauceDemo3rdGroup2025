@@ -4,9 +4,9 @@
     <listeners>
         <listener class-name="ExtentReports.Listener"></listener>
     </listeners>
-    <test name="Sauce Demo Test">
+    <test name="Sauce Demo Tests">
         <classes>
-        <class name="Tests.PurchaseProductsTest"></class>
+            <class name="Tests.PurchaseProductsTest"></class>
         </classes>
     </test>
 </suite>
