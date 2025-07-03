@@ -16,11 +16,14 @@ public class HomePage {
     WebElement productTitle_xpath;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement addToCart_id;
+    @FindBy(xpath = "//div[@id='shopping_cart_container']/a/span")
+    WebElement ViewCartItems_xpath;
+    @FindBy(id = "react-burger-menu-btn")
+    WebElement burgerButton_id;
+    @FindBy(id = "logout_sidebar_link")
+    WebElement logoutButton_id;
 
-    @FindBy(className ="shopping_cart_link")
-    WebElement ViewCartItems;
-
-    public HomePage (WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -32,12 +35,24 @@ public class HomePage {
 //            throw new AssertionError("Expected title: " + expectedTitle + ", but found: " + actualTitle);
 //        }
     }
+
     public void clickAddToCart() {
         addToCart_id.click();
     }
+
     // Button or clicking the actual Cart Icon
-    public void ClickCart(){
-        //new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
-        ViewCartItems.click();
+    public void ClickCart() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
+        ViewCartItems_xpath.click();
+    }
+
+    public void clickOnBurgerButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(burgerButton_id));
+        burgerButton_id.click();
+    }
+
+    public void clickOnLogOut() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(logoutButton_id));
+        logoutButton_id.click();
     }
 }
