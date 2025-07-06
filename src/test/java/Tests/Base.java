@@ -13,11 +13,10 @@ public class Base {
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
-
     CheckoutPage checkOutpage = PageFactory.initElements(driver, CheckoutPage.class);
-//    CheckOutOverview checkOutOverViewPagePage = PageFactory.initElements(driver, CheckOutOverview.class);
-//    CheckOutThankYouPage checkOutThankYouPage = PageFactory.initElements(driver, CheckOutThankYouPage.class);
-//    AddedItems addedItems = PageFactory.initElements(driver, AddedItems.class);
+    CheckoutOverview checkOutOverViewPagePage = PageFactory.initElements(driver, CheckoutOverview.class);
+    ThankyouPage checkOutThankYouPage = PageFactory.initElements(driver, ThankyouPage.class);
+
     ReadFromFile readFromFile = new ReadFromFile();
 
 }

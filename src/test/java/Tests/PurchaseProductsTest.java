@@ -91,40 +91,40 @@ public class PurchaseProductsTest extends Base {
 
         checkOutpage.clickContinueButton();
     }
-//
-//    @Test(dependsOnMethods = "clickContinueButton")
-//    public void verifyCheckOutLabel() {
-//
-//        checkOutOverViewPagePage.verifyCheckOutLabel();
-//    }
-//
-//    @Test(dependsOnMethods = "verifyCheckOutLabel")
-//    public void clickFinishButton() {
-//        checkOutOverViewPagePage.clickFinishButton();
-//    }
-//
-//    @Test(dependsOnMethods = "clickFinishButton")
-//    public void verifyThankYouLabel() {
-//        checkOutThankYouPage.verifyThankYouLabel();
-//    }
-//
-//    @Test(dependsOnMethods = "verifyThankYouLabel")
-//    public void clickBackHomeButton() {
-//        checkOutThankYouPage.clickBackHomeButton();
-//    }
-//
-//
-//    @Test(dependsOnMethods = "verifyThankYouLabel")
-//    public void clickOnBurgerButton() {
-//
-//        homePage.clickOnBurgerButton();
-//    }
-//
-//    @Test(dependsOnMethods = "clickOnBurgerButton")
-//    public void clickOnLogOut() {
-//        homePage.clickOnLogOut();
-//
-//    }
+
+    @Test(dependsOnMethods = "clickContinueButton")
+    public void verifyCheckOutLabel() {
+
+        checkOutOverViewPagePage.verifyCheckOutLabel();
+    }
+
+    @Test(dependsOnMethods = "verifyCheckOutLabel")
+    public void clickFinishButton() {
+        checkOutOverViewPagePage.clickFinishButton();
+    }
+
+    @Test(dependsOnMethods = "clickFinishButton")
+    public void verifyThankYouLabel() {
+        checkOutThankYouPage.verifyThankYouLabel();
+    }
+
+    @Test(dependsOnMethods = "verifyThankYouLabel")
+    public void clickBackHomeButton() {
+        checkOutThankYouPage.clickBackHomeButton();
+    }
+
+
+    @Test(dependsOnMethods = "verifyThankYouLabel")
+    public void clickOnBurgerButton() {
+
+        homePage.clickOnBurgerButton();
+    }
+
+    @Test(dependsOnMethods = "clickOnBurgerButton")
+    public void clickOnLogOut() {
+        homePage.clickOnLogOut();
+
+    }
 //
 //    @AfterTest
 //    public void closeBrowser() {
