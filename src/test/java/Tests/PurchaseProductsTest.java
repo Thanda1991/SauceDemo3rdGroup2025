@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 @Test
 public class PurchaseProductsTest extends Base{
 
+    @Test
     public void enterUsername(){
 
         loginPage.enterUsername(ReadFromFile.username);
@@ -38,19 +39,19 @@ public class PurchaseProductsTest extends Base{
         homePage.clickAddToCart();
     }
 
-    @Test(dependsOnMethods = "clickAddToCart")
+   @Test(dependsOnMethods = "clickAddToCart")
     public void verifyRemoveButton(){
 
-       // homePage.verifyRemoveButton();
+        homePage.verifyRemoveButton();
     }
 
-    @Test(dependsOnMethods = "verifyRemoveButton")
-    public void clickOnCart(){
+    @Test(dependsOnMethods = "clickAddToCart")
+    public void clickCart(){
 
-       // homePage.clickOnCart();
+        homePage.clickCart();
     }
 
-    @Test(dependsOnMethods = "clickOnCart")
+    @Test(dependsOnMethods = "clickCart")
     public void verifyYourCartTitle(){
 
         cartPage.verifyYourCartTitle();
@@ -111,15 +112,15 @@ public class PurchaseProductsTest extends Base{
     }
 
 
-    @Test(dependsOnMethods = "verifyThankYouLabel")
-    public void clickOnBurgerButton() {
+    @Test(dependsOnMethods = "clickBackHomeButton")
+    public void clickBurgerMenu() throws InterruptedException {
 
-       // homePage.clickOnBurgerButton();
+        homePage.clickBurgerMenu();
     }
 
-    @Test(dependsOnMethods = "clickOnBurgerButton")
-    public void clickOnLogOut() {
-        //homePage.clickOnLogOut();
+    @Test(dependsOnMethods = "clickBurgerMenu")
+    public void clickLogoutButton() {
+        homePage.clickLogoutButton();
     }
 
 
