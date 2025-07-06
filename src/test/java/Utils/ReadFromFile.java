@@ -10,7 +10,9 @@ import java.io.IOException;
 
 public class ReadFromFile {
 
-    private static String testData = System.getProperty("user.dir") +"/src/test/java/TestData/data.xlsx";
+    private static String testData = System.getProperty("user.dir") +"src/test/java/TestData/data.xlsx";
+
+
 
     static FileInputStream fs;
 
@@ -40,6 +42,7 @@ public class ReadFromFile {
 
     public static String firstName = sheet2.getRow(1).getCell(0).getStringCellValue();
     public static String lastName = sheet2.getRow(1).getCell(1).getStringCellValue();
+    public static String postalCode = sheet2.getRow(1).getCell(2).getStringCellValue();
 
     @Test
     public void test(){

@@ -22,6 +22,9 @@ Reports/
 .settings
 .springBeans
 .sts4-cache
+.slf4j-simple.jar
+.logback-classic.jar
+.slf4j-nop.jar
 
 ### NetBeans ###
 /nbproject/private/
