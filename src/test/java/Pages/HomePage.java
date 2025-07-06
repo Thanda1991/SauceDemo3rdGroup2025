@@ -18,9 +18,12 @@ public class HomePage {
     WebElement addToCart_id;
     @FindBy(xpath ="//div[@id='shopping_cart_container']/a/span")
     WebElement ViewCartItems_xpath;
+    @FindBy(id = "react-burger-menu-btn")
+    WebElement clickBurgerMenu_id;
 
-    @FindBy(id = "add-to-cart-sauce-labs-backpack")
-    WebElement addToCart_id;
+    @FindBy(id = "logout_sidebar_link")
+    WebElement logOutButton_id;
+
 
 
     public HomePage (WebDriver driver) {
@@ -44,5 +47,17 @@ public class HomePage {
         ViewCartItems_xpath.click();
     }
 
-    public void
+    public void clickOnBurgerButton() {
+        clickBurgerMenu_id.click();
+        // Assuming there's a checkout button to click after adding items to the cart
+        // This method should be implemented based on the actual page structure
+    }
+
+
+    public void clickOnLogOut(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(logOutButton_id));
+        logOutButton_id.click();
+    }
+
+
 }
