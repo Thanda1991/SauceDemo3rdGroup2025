@@ -71,25 +71,25 @@ public class PurchaseProductsTest extends Base {
     @Test(dependsOnMethods = "verifyYourInformationLabel")
     public void enterFirstNameYourInformation() {
 
-        checkOutInformationPage.enterFirstNameYourInformation(readFromFile.firstName);
+        checkOut.EnterName(readFromFile.firstName);
     }
 
     @Test(dependsOnMethods = "enterFirstNameYourInformation")
     public void enterLastNameYourInformation() {
 
-        checkOutInformationPage.enterLastNameYourInformation(readFromFile.lastName);
+        checkOut.EnterLastName(readFromFile.lastName);
     }
 
     @Test(dependsOnMethods = "enterLastNameYourInformation")
     public void enterPostCodeYourInformation() {
 
-        checkOutInformationPage.enterPostCodeYourInformation(readFromFile.postalCode);
+        checkOut.EnterPostalCode(readFromFile.postalCode);
     }
 
     @Test(dependsOnMethods = "enterPostCodeYourInformation")
     public void clickContinueButton() {
 
-        checkOutInformationPage.clickContinueButton();
+        checkOut.ClickContBtn();
     }
 
     @Test(dependsOnMethods = "clickContinueButton")
