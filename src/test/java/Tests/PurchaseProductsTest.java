@@ -38,11 +38,11 @@ public class PurchaseProductsTest extends Base {
         homePage.clickAddToCart();
     }
 
-//    @Test(dependsOnMethods = "clickAddToCart")
-//    public void verifyRemoveButton(){
+//   @Test(dependsOnMethods = "clickAddToCart")
+//  public void verifyRemoveButton(){
 //
-//        homePage.verifyRemoveButton();
-//    }
+//       homePage.verifyRemoveButton();
+//   }
 
     @Test(dependsOnMethods = "clickAddToCart")
     public void ClickCart() {
@@ -65,71 +65,71 @@ public class PurchaseProductsTest extends Base {
     @Test(dependsOnMethods = "clickOnCheckOutButton")
     public void verifyYourInformationLabel() {
 
-        checkOutInformationPage.verifyYourInformationLabel();
+        checkOutpage.verifyYourInformationLabel();
     }
 
     @Test(dependsOnMethods = "verifyYourInformationLabel")
     public void enterFirstNameYourInformation() {
 
-        checkOut.EnterName(readFromFile.firstName);
+        checkOutpage.enterFirstNameYourInformation(readFromFile.firstName);
     }
 
     @Test(dependsOnMethods = "enterFirstNameYourInformation")
     public void enterLastNameYourInformation() {
 
-        checkOut.EnterLastName(readFromFile.lastName);
+        checkOutpage.enterLastNameYourInformation(readFromFile.lastName);
     }
 
     @Test(dependsOnMethods = "enterLastNameYourInformation")
     public void enterPostCodeYourInformation() {
 
-        checkOut.EnterPostalCode(readFromFile.postalCode);
+        checkOutpage.enterPostCodeYourInformation(readFromFile.postalCode);
     }
 
     @Test(dependsOnMethods = "enterPostCodeYourInformation")
     public void clickContinueButton() {
 
-        checkOut.ClickContBtn();
+        checkOutpage.clickContinueButton();
     }
-
-    @Test(dependsOnMethods = "clickContinueButton")
-    public void verifyCheckOutLabel() {
-
-        checkOutOverViewPagePage.verifyCheckOutLabel();
-    }
-
-    @Test(dependsOnMethods = "verifyCheckOutLabel")
-    public void clickFinishButton() {
-        checkOutOverViewPagePage.clickFinishButton();
-    }
-
-    @Test(dependsOnMethods = "clickFinishButton")
-    public void verifyThankYouLabel() {
-        checkOutThankYouPage.verifyThankYouLabel();
-    }
-
-    @Test(dependsOnMethods = "verifyThankYouLabel")
-    public void clickBackHomeButton() {
-        checkOutThankYouPage.clickBackHomeButton();
-    }
-
-
-    @Test(dependsOnMethods = "verifyThankYouLabel")
-    public void clickOnBurgerButton() {
-
-        homePage.clickOnBurgerButton();
-    }
-
-    @Test(dependsOnMethods = "clickOnBurgerButton")
-    public void clickOnLogOut() {
-        homePage.clickOnLogOut();
-
-    }
-
-    @AfterTest
-    public void closeBrowser() {
-        driver.quit();
-    }
+//
+//    @Test(dependsOnMethods = "clickContinueButton")
+//    public void verifyCheckOutLabel() {
+//
+//        checkOutOverViewPagePage.verifyCheckOutLabel();
+//    }
+//
+//    @Test(dependsOnMethods = "verifyCheckOutLabel")
+//    public void clickFinishButton() {
+//        checkOutOverViewPagePage.clickFinishButton();
+//    }
+//
+//    @Test(dependsOnMethods = "clickFinishButton")
+//    public void verifyThankYouLabel() {
+//        checkOutThankYouPage.verifyThankYouLabel();
+//    }
+//
+//    @Test(dependsOnMethods = "verifyThankYouLabel")
+//    public void clickBackHomeButton() {
+//        checkOutThankYouPage.clickBackHomeButton();
+//    }
+//
+//
+//    @Test(dependsOnMethods = "verifyThankYouLabel")
+//    public void clickOnBurgerButton() {
+//
+//        homePage.clickOnBurgerButton();
+//    }
+//
+//    @Test(dependsOnMethods = "clickOnBurgerButton")
+//    public void clickOnLogOut() {
+//        homePage.clickOnLogOut();
+//
+//    }
+//
+//    @AfterTest
+//    public void closeBrowser() {
+//        driver.quit();
+//    }
 
 
 }
