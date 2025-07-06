@@ -51,9 +51,9 @@ public class ReadFromFile {
     public void test() {
         System.out.println("username is " + username);
         System.out.println("password is " + password);
-//        System.out.println("username is "+firstName);
-//        System.out.println("password is "+lastName);
-//        System.out.println("password is "+postalCode);
+        System.out.println("username is " + firstName);
+        System.out.println("password is " + lastName);
+        System.out.println("password is " + postalCode);
 
 
     }
