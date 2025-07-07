@@ -32,6 +32,15 @@ public class ReadFromFile {
             throw new RuntimeException(e);
         }
     }
+    static {
+         try {
+        FileInputStream fileInputStream = new FileInputStream(testData);
+        // Your code to read the file
+    } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }// Print the stack trace for debugging
+    }
+
 
     static XSSFSheet sheet = workbook.getSheet("login");
 
