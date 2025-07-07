@@ -98,7 +98,13 @@ public class PurchaseProductsTest extends Base {
         checkOutOverViewPagePage.verifyCheckOutLabel();
     }
 
+
     @Test(dependsOnMethods = "verifyCheckOutLabel")
+    public void verifybalance() {
+        checkOutOverViewPagePage.verifybalance();
+    }
+
+    @Test(dependsOnMethods = "verifybalance")
     public void clickFinishButton() {
         checkOutOverViewPagePage.clickFinishButton();
     }
@@ -125,10 +131,6 @@ public class PurchaseProductsTest extends Base {
         homePage.clickOnLogOut();
 
     }
-
-
-
-
 
 
 //

@@ -20,21 +20,27 @@ public class VatCalc {
     @FindBy(xpath = "//div[@id='checkout_summary_container']/div/div[2]/div[8]")
     WebElement grand_total_label_xpath;
 
-    double subtotal = Double.parseDouble(balance_Label_xpath.getText());
-    double vatPercent = Double.parseDouble(vat_label_xpath.getText());
-    double grandtotal = Double.parseDouble(grand_total_label_xpath.getText());
+    public void verifybalance() { //Show VAT and Grand Total on the page
+        double subtotal = Double.parseDouble(balance_Label_xpath.getText());
 
-    double vatAmount = subtotal * vatPercent / 100;
-    double grandTotal = subtotal + vatAmount;
+        double vatPercent = Double.parseDouble(vat_label_xpath.getText());
 
-    @Test
-    public void test() {
-        System.out.println("Subtotal is:" + subtotal);
-        System.out.println("VAT is:" + vatPercent);
-        System.out.println("Grand Total is:" + grandtotal);
+        double grandtotal = Double.parseDouble(grand_total_label_xpath.getText());
+        double vatAmount = subtotal * vatPercent / 100;
+        double grandTotal = subtotal + vatAmount;
+
+        // Calculate VAT (8%) and Grand Total
+         vatPercent = 0.08;
+        double vat = subtotal * vatPercent / 100;
+        double grandTL = subtotal + vat;
+
+
+        System.out.println("Selected Price: $" + subtotal);
+        System.out.println("VAT (8%): $" + vat);
+        System.out.println("Grand Total: $" + grandTotal);
+
 
     }
 }
-
 
 
