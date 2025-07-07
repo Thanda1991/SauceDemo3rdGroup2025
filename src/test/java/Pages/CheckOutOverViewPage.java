@@ -14,6 +14,15 @@ public class CheckOutOverViewPage {
     @FindBy(xpath = "//span[contains(.,'Checkout: Overview')]")
     WebElement checkoutLabel_xpath;
 
+    @FindBy(className = "summary_subtotal_label")
+    WebElement itemTotalLabel_className;
+
+    @FindBy(className = "summary_tax_label")
+    WebElement taxLabel_className;
+
+    @FindBy(className = "summary_total_label")
+    WebElement totalLabel_className;
+
     @FindBy(xpath = "//button[@id='finish']")
     WebElement finishButton_xpath;
 
@@ -24,6 +33,26 @@ public class CheckOutOverViewPage {
 
     public void clickFinishButton(){
         finishButton_xpath.click();
+    }
+
+    public double getItemTotal() {
+        String text = itemTotalLabel_className.getText();
+        return Double.parseDouble(text.substring(text.indexOf("$") + 1));
+        //return Double.parseDouble(text.replaceAll("[^\\d.]", ""));
+
+    }
+
+    public double getTax() {
+        String text = taxLabel_className.getText();
+        return Double.parseDouble(text.substring(text.indexOf("$") + 1));
+        //return Double.parseDouble(text.replaceAll("[^\\d.]", ""));
+
+    }
+
+    public double getTotal() {
+        String text = totalLabel_className.getText();
+        return Double.parseDouble(text.substring(text.indexOf("$") + 1));
+        //return Double.parseDouble(text.replaceAll("[^\\d.]", ""));
     }
 
 

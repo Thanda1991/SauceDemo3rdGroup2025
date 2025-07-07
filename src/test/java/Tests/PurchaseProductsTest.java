@@ -4,6 +4,8 @@ import Utils.ReadFromFile;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 @Test
 public class PurchaseProductsTest extends Base {
 
@@ -96,6 +98,12 @@ public class PurchaseProductsTest extends Base {
     public void verifyCheckOutLabel() {
 
         checkOutOverViewPagePage.verifyCheckOutLabel();
+    }
+
+    @Test(dependsOnMethods = "verifyCheckOutLabel")
+    public void verifyTotalPrice()
+    {
+        assertEquals(checkOutOverViewPagePage.getItemTotal() + checkOutOverViewPagePage.getTax(), checkOutOverViewPagePage.getTotal(), 0.01);
     }
 
     @Test(dependsOnMethods = "verifyCheckOutLabel")
