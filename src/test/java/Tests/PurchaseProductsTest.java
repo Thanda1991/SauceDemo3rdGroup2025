@@ -125,6 +125,12 @@ public class PurchaseProductsTest extends Base {
         homePage.clickOnLogOut();
 
     }
+
+
+
+
+
+
 //
 //    @AfterTest
 //    public void closeBrowser() {

@@ -16,7 +16,7 @@ public class Base {
     CheckoutPage checkOutpage = PageFactory.initElements(driver, CheckoutPage.class);
     CheckoutOverview checkOutOverViewPagePage = PageFactory.initElements(driver, CheckoutOverview.class);
     ThankyouPage checkOutThankYouPage = PageFactory.initElements(driver, ThankyouPage.class);
-
+    VatCalc vatCalcPage = PageFactory.initElements(driver,VatCalc.class);
     ReadFromFile readFromFile = new ReadFromFile();
 
 }
