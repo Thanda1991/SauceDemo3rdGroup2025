@@ -1,4 +1,5 @@
 target/
+Reports/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -30,7 +31,8 @@ target/
 /.nb-gradle/
 build/
 !**/src/main/**/build/
-!**/src/test/**/build/
+!**/src/test/**/build
+Screenshots/
 
 ### VS Code ###
 .vscode/
