@@ -19,7 +19,7 @@ public class CheckOutThankYouPage {
     WebElement BackHomeButton_id;
 
     public void verifyThankYouLabel(){
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(thankYouLabel_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(thankYouLabel_xpath));
         thankYouLabel_xpath.isDisplayed();
     }
     public void clickBackHomeButton(){

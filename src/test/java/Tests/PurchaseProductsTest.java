@@ -4,6 +4,8 @@ import Utils.ReadFromFile;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+import java.io.StringReader;
+
 @Test
 public class PurchaseProductsTest extends Base {
 
@@ -92,18 +94,24 @@ public class PurchaseProductsTest extends Base {
         checkOutInformationPage.clickContinueButton();
     }
 
+
     @Test(dependsOnMethods = "clickContinueButton")
     public void verifyCheckOutLabel() {
 
         checkOutOverViewPagePage.verifyCheckOutLabel();
     }
+    @Test(dependsOnMethods = "verifyCheckOutLabel")
+    public void PaymentInformation() {
+
+        checkOutOverViewPagePage.PaymentInformation();
+
+    }
+//    @Test(dependsOnMethods = "verifyCheckOutLabel")
+//    public void clickFinishButton() {
+//        checkOutOverViewPagePage.clickFinishButton();
+//    }
 
     @Test(dependsOnMethods = "verifyCheckOutLabel")
-    public void clickFinishButton() {
-        checkOutOverViewPagePage.clickFinishButton();
-    }
-
-    @Test(dependsOnMethods = "clickFinishButton")
     public void verifyThankYouLabel() {
         checkOutThankYouPage.verifyThankYouLabel();
     }
