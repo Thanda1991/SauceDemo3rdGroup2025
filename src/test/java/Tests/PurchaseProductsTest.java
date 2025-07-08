@@ -5,16 +5,16 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 @Test
-public class PurchaseProductsTest extends Base{
+public class PurchaseProductsTest extends Base {
 
-    public void enterUsername(){
+    public void enterUsername() {
 
         loginPage.enterUsername(ReadFromFile.username);
     }
 
     @Test(dependsOnMethods = "enterUsername")
     //@Test(priority = 1)
-    public void enterPassword(){
+    public void enterPassword() {
 
         loginPage.enterPassword(ReadFromFile.password);
         takesScreenshots.takesScreenshot(driver,"LoginPage");
@@ -22,7 +22,7 @@ public class PurchaseProductsTest extends Base{
 
     //@Test(priority = 2)
     @Test(dependsOnMethods = "enterPassword")
-    public void clickLoginButton(){
+    public void clickLoginButton() {
 
         loginPage.clickLoginButton();
     }
@@ -35,78 +35,81 @@ public class PurchaseProductsTest extends Base{
     }
 
     @Test(dependsOnMethods = "verifyProductTitle")
-    public void clickAddToCart(){
+    public void clickAddToCart() {
 
         homePage.clickAddToCart();
     }
 
+//    @Test(dependsOnMethods = "clickAddToCart")
+//    public void verifyRemoveButton(){
+//
+//        homePage.verifyRemoveButton();
+//    }
+
     @Test(dependsOnMethods = "clickAddToCart")
-    public void verifyRemoveButton(){
+    public void ClickCart() {
 
-       // homePage.verifyRemoveButton();
+        homePage.ClickCart();
     }
 
-    @Test(dependsOnMethods = "verifyRemoveButton")
-    public void clickOnCart(){
-
-       // homePage.clickOnCart();
-    }
-
-    @Test(dependsOnMethods = "clickOnCart")
-    public void verifyYourCartTitle(){
+    @Test(dependsOnMethods = "ClickCart")
+    public void verifyYourCartTitle() {
 
         cartPage.verifyYourCartTitle();
     }
 
     @Test(dependsOnMethods = "verifyYourCartTitle")
-    public void clickOnCheckOutButton(){
+    public void clickOnCheckOutButton() {
 
         cartPage.clickOnCheckOutButton();
     }
 
     @Test(dependsOnMethods = "clickOnCheckOutButton")
-    public void verifyYourInformationLabel(){
+    public void verifyYourInformationLabel() {
 
         checkOutInformationPage.verifyYourInformationLabel();
     }
 
     @Test(dependsOnMethods = "verifyYourInformationLabel")
-    public void enterFirstNameYourInformation(){
+    public void enterFirstNameYourInformation() {
 
         checkOutInformationPage.enterFirstNameYourInformation(readFromFile.firstName);
     }
 
     @Test(dependsOnMethods = "enterFirstNameYourInformation")
-    public void enterLastNameYourInformation(){
+    public void enterLastNameYourInformation() {
 
         checkOutInformationPage.enterLastNameYourInformation(readFromFile.lastName);
     }
 
     @Test(dependsOnMethods = "enterLastNameYourInformation")
-    public void enterPostCodeYourInformation(){
+    public void enterPostCodeYourInformation() {
 
         checkOutInformationPage.enterPostCodeYourInformation(readFromFile.postalCode);
     }
 
     @Test(dependsOnMethods = "enterPostCodeYourInformation")
-    public void clickContinueButton(){
+    public void clickContinueButton() {
 
         checkOutInformationPage.clickContinueButton();
     }
 
     @Test(dependsOnMethods = "clickContinueButton")
-    public void verifyCheckOutLabel(){
+    public void verifyCheckOutLabel() {
 
         checkOutOverViewPagePage.verifyCheckOutLabel();
     }
+
     @Test(dependsOnMethods = "verifyCheckOutLabel")
     public void clickFinishButton() {
         checkOutOverViewPagePage.clickFinishButton();
     }
+
     @Test(dependsOnMethods = "clickFinishButton")
     public void verifyThankYouLabel() {
         checkOutThankYouPage.verifyThankYouLabel();
     }
+
     @Test(dependsOnMethods = "verifyThankYouLabel")
     public void clickBackHomeButton() {
         checkOutThankYouPage.clickBackHomeButton();
@@ -116,14 +119,14 @@ public class PurchaseProductsTest extends Base{
     @Test(dependsOnMethods = "verifyThankYouLabel")
     public void clickOnBurgerButton() {
 
-       // homePage.clickOnBurgerButton();
+        homePage.clickOnBurgerButton();
     }
 
     @Test(dependsOnMethods = "clickOnBurgerButton")
     public void clickOnLogOut() {
-        //homePage.clickOnLogOut();
-    }
+        homePage.clickOnLogOut();
 
+    }
 
     @AfterTest
     public void closeBrowser() {
