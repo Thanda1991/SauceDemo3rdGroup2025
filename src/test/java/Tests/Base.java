@@ -3,6 +3,7 @@ package Tests;
 import Pages.*;
 import Utils.BrowserFactory;
 import Utils.ReadFromFile;
+import Utils.TakesScreenshots;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,7 +17,8 @@ public class Base {
     CheckoutPage checkOutpage = PageFactory.initElements(driver, CheckoutPage.class);
     CheckoutOverview checkOutOverViewPagePage = PageFactory.initElements(driver, CheckoutOverview.class);
     ThankyouPage checkOutThankYouPage = PageFactory.initElements(driver, ThankyouPage.class);
-    VatCalc vatCalcPage = PageFactory.initElements(driver,VatCalc.class);
+    TakesScreenshots takesScreenshots =PageFactory.initElements(driver,TakesScreenshots.class);
+    //VatCalc vatCalcPage = PageFactory.initElements(driver,VatCalc.class);
     ReadFromFile readFromFile = new ReadFromFile();
 
 }
