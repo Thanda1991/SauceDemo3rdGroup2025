@@ -1,31 +1,30 @@
 package Pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static Utils.HighlightElements.highlight;
+import java.time.Duration;
 
-public class CheckoutOverviewPage {
-    @FindBy(className = "title")
-    WebElement checkoutOverviewtitle;
+public class CheckOutOverViewPage {
+    WebDriver driver;
 
-    @FindBy(id= "finish")
-    WebElement finish_id;
+    @FindBy(xpath = "//span[contains(.,'Checkout: Overview')]")
+    WebElement checkoutLabel_xpath;
 
+    @FindBy(xpath = "//button[@id='finish']")
+    WebElement finishButton_xpath;
 
-    public void VerifyCheckoutOverviewTitle() {
-        String actualTitle = checkoutOverviewtitle.getText();
-        Assert.assertTrue(actualTitle.contains("Checkout: Overview"),
-                "Expected title to contain 'Checkout: Overview' but got: " + actualTitle);
-        highlight(checkoutOverviewtitle);
+    public void verifyCheckOutLabel(){
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(checkoutLabel_xpath));
+        checkoutLabel_xpath.isDisplayed();
     }
 
-    public void ClickFinishButton(){
-        finish_id.click();
-
+    public void clickFinishButton(){
+        finishButton_xpath.click();
     }
-
 
 
 }
