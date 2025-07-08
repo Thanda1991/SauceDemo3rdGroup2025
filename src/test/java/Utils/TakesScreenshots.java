@@ -9,8 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class TakesScreenshots {
-
-    private static String ScreenshotDir = System.getProperty("user.dir") + "/Screenshots/";
+    private static final String ScreenshotDir = System.getProperty("user.dir") + "/Screenshots/";
 
     public void takesScreenshot(WebDriver driver, String screenshotName) {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
