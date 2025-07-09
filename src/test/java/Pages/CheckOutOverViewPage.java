@@ -22,7 +22,9 @@ public class CheckOutOverViewPage {
         checkoutLabel_xpath.isDisplayed();
     }
 
+
     public void clickFinishButton(){
+
         finishButton_xpath.click();
     }
 
