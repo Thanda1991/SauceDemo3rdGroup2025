@@ -38,5 +38,7 @@ public class HomePage {
     public void ClickCart(){
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(ViewCartItems_xpath));
         ViewCartItems_xpath.click();
+
+
     }
 }
