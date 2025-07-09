@@ -39,8 +39,6 @@ public class CheckoutOverview {
 
 
     }
-
-
     public void clickFinishButton() {
         finishButton_xpath.click();
     }
