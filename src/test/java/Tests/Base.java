@@ -12,7 +12,7 @@ public class Base {
 
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-    //CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
+    CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
     CheckOutInformationPage checkOutInformationPage = PageFactory.initElements(driver, CheckOutInformationPage.class);
     CheckOutOverViewPage checkOutOverViewPagePage = PageFactory.initElements(driver, CheckOutOverViewPage.class);
     CheckOutThankYouPage checkOutThankYouPage = PageFactory.initElements(driver, CheckOutThankYouPage.class);
