@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/AutomationClasses2025/SauceDemo3rdGroup2025/src/test/java/ExtentReports"><classes/></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="ExtentReports.Listener"></listener>
+    </listeners>
+    <test name="Sauce Demo Tests">
+        <classes>
+            <class name="Tests.PurchaseProductsTest"></class>
+        </classes>
+    </test>
+</suite>
