@@ -100,11 +100,12 @@ public class PurchaseProductsTest extends Base {
 
 
     @Test(dependsOnMethods = "verifyCheckOutLabel")
-    public void verifybalance() {
-        checkOutOverViewPagePage.verifybalance();
+    public void VatCalc() {
+        checkOutpage.VatCalc();
     }
 
-    @Test(dependsOnMethods = "verifybalance")
+
+    @Test(dependsOnMethods = "VatCalc")
     public void clickFinishButton() {
         checkOutOverViewPagePage.clickFinishButton();
     }
@@ -120,7 +121,7 @@ public class PurchaseProductsTest extends Base {
     }
 
 
-    @Test(dependsOnMethods = "verifyThankYouLabel")
+    @Test(dependsOnMethods = "clickBackHomeButton")
     public void clickOnBurgerButton() {
 
         homePage.clickOnBurgerButton();

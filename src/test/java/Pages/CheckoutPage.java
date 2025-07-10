@@ -30,7 +30,7 @@ public class CheckoutPage {
     @FindBy(xpath = "//div[@id='checkout_summary_container']/div/div[2]/div[6]")
     WebElement balance_Label_xpath;
 
-    @FindBy(xpath = "xpath=//div[@id='checkout_summary_container']/div/div[2]/div[7]")
+    @FindBy(xpath = "//div[@id='checkout_summary_container']/div/div[2]/div[7]")
     WebElement vat_label_xpath;
 
     @FindBy(xpath = "//div[@id='checkout_summary_container']/div/div[2]/div[8]")

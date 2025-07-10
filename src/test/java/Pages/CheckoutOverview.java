@@ -17,6 +17,13 @@ public class CheckoutOverview {
     @FindBy(xpath = "//button[@id='finish']")
     WebElement finishButton_xpath;
 
+
+
+    public void verifyCheckOutLabel() {
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(checkoutLabel_xpath));
+        checkoutLabel_xpath.isDisplayed();
+    }
+
     public void clickFinishButton() {
         finishButton_xpath.click();
     }
