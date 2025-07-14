@@ -86,7 +86,7 @@ public class PurchaseProductsTest extends Base {
     @Test(priority = 11, dependsOnMethods = "clickContinue")
     public void verifyCheckoutOverviewPage() throws InterruptedException {
         // Step 11: Verify 'Checkout: Overview' page is displayed
-        checkoutoverviewPage.verifyCheckOutLabel();
+        checkoutoverviewPage.VerifyCheckoutOverviewTitle();
         takesScreenshots.takesScreenshot(driver,"checkoutoverviewPage");
         Thread.sleep(1000);
     }
@@ -94,7 +94,7 @@ public class PurchaseProductsTest extends Base {
     @Test(priority = 12, dependsOnMethods = "verifyCheckoutOverviewPage")
     public void clickFinish() throws InterruptedException {
         // Step 12: Complete the purchase
-        checkoutoverviewPage.clickFinishButton();
+        checkoutoverviewPage.ClickFinishButton();
         Thread.sleep(1000);
     }
 
@@ -123,7 +123,7 @@ public class PurchaseProductsTest extends Base {
 
     @AfterTest
     public void closeBrowser() {
-        // Final Step: Close the browser after test completion
+        // Final Step: Close the browser after ExtendReportManager completion
         driver.quit();
     }
 }

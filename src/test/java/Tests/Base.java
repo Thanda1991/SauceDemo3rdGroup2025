@@ -17,7 +17,7 @@ public abstract class Base {
     protected HomePage homePage;
     protected CartPage cartPage;
     protected CheckoutPage checkoutPage;
-    protected CheckOutOverViewPage checkoutoverviewPage;
+    protected CheckoutOverviewPage checkoutoverviewPage;
     protected CheckoutCompletePage checkoutcompletePage;
 
     protected ReadFromFile readFromFile;
@@ -34,7 +34,7 @@ public abstract class Base {
         homePage                = PageFactory.initElements(driver, HomePage.class);
         cartPage                = PageFactory.initElements(driver, CartPage.class);
         checkoutPage            = PageFactory.initElements(driver, CheckoutPage.class);
-        checkoutoverviewPage   = PageFactory.initElements(driver, CheckOutOverViewPage .class);
+        checkoutoverviewPage   = PageFactory.initElements(driver, CheckoutOverviewPage.class);
         checkoutcompletePage   = PageFactory.initElements(driver, CheckoutCompletePage.class);
 
 // 3) Initialize utility classes

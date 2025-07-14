@@ -31,7 +31,7 @@ public class BrowserFactory {
     }
 
 //    @Test
-//    public void test(){
+//    public void ExtendReportManager(){
 //        startBrowser("chrome", "https://www.saucedemo.com/");
 //    }
 }

@@ -9,7 +9,7 @@ import java.io.InputStream;
 
 public class ReadFromFile {
 
-    private static final String EXCEL_PATH = "data.xlsx";  // should be in src/test/resources
+    private static final String EXCEL_PATH = "data.xlsx";  // should be in src/ExtendReportManager/resources
 
     public static String username;
     public static String password;
