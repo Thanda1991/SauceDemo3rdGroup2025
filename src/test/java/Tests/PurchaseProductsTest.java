@@ -91,31 +91,40 @@ public class PurchaseProductsTest extends Base {
         Thread.sleep(1000);
     }
 
+
     @Test(priority = 12, dependsOnMethods = "verifyCheckoutOverviewPage")
+    public void verifyPaymentCalculation() throws InterruptedException {
+        // Step 12: Verify the total price, tax and item total match expected values
+        checkoutoverviewPage.verifyTotalPaymentAmount();
+        takesScreenshots.takesScreenshot(driver, "PaymentCalculation");
+        Thread.sleep(1000);
+    }
+
+    @Test(priority = 13, dependsOnMethods = "verifyPaymentCalculation")
     public void clickFinish() throws InterruptedException {
-        // Step 12: Complete the purchase
+        // Step 13: Complete the purchase
         checkoutoverviewPage.ClickFinishButton();
         Thread.sleep(1000);
     }
 
-    @Test(priority = 13, dependsOnMethods = "clickFinish")
+    @Test(priority = 14, dependsOnMethods = "clickFinish")
     public void verifyCheckoutComplete() throws InterruptedException {
-        // Step 13: Confirm the order completion page is displayed
+        // Step 14: Confirm the order completion page is displayed
         checkoutcompletePage.VerifyCheckoutComplete();
         takesScreenshots.takesScreenshot(driver,"checkoutcompletePage");
         Thread.sleep(1000);
     }
 
-    @Test(priority = 14, dependsOnMethods = "verifyCheckoutComplete")
+    @Test(priority = 15, dependsOnMethods = "verifyCheckoutComplete")
     public void clickBackHome() throws InterruptedException {
-        // Step 14: Click 'Back Home' to return to product listing
+        // Step 15: Click 'Back Home' to return to product listing
         checkoutcompletePage.clickBackHome();
         Thread.sleep(1000);
     }
 
-    @Test(priority = 15, dependsOnMethods = "clickBackHome")
+    @Test(priority = 16, dependsOnMethods = "clickBackHome")
     public void verifyBackHome() throws InterruptedException {
-        // Step 15: Verify navigation back to the products page
+        // Step 16: Verify navigation back to the products page
         homePage.verifyProductTitle();
         takesScreenshots.takesScreenshot(driver,"HomePage");
         Thread.sleep(1000);

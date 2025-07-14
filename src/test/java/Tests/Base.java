@@ -27,7 +27,7 @@ public abstract class Base {
     @BeforeClass
     public void setUp() {
         // 1) Start browser and navigate
-        driver = BrowserFactory.startBrowser("chrome", "https://www.saucedemo.com/");
+        driver = BrowserFactory.startBrowser("Edge", "http://www.saucedemo.com/");
 
         // 2) Initialize Page Objects
         loginPage               = PageFactory.initElements(driver, LoginPage.class);
