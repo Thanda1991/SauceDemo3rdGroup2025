@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemoSuite">
+
+    <listeners>
+        <listener class-name="ExtentReports.Listener"/>
+    </listeners>
+
+    <test name="Sauce Demo Tests">
+        <classes>
+            <class name="Tests.PurchaseProductsTest"/>
+<!--            <class name="Tests.SauceDemoTests"/>-->
+        </classes>
+    </test>
+
+</suite>
