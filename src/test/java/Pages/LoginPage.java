@@ -3,13 +3,14 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
 
-   // Initialize Webdriver
     WebDriver driver;
 
-    // Locators for the login page
     @FindBy(id = "user-name")
     WebElement username_id;
 
@@ -21,5 +22,19 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public void enterUsername(String username) {
+        new WebDriverWait(driver, Duration.ofSeconds(20))
+                .until(webDriver -> username_id.isDisplayed() && username_id.isEnabled());
+        username_id.sendKeys(username);
+    }
+
+    public void enterPassword(String password) {
+        password_id.sendKeys(password);
+    }
+
+    public void clickLoginButton() {
+        loginButton_id.click();
     }
 }
