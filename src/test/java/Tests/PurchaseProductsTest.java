@@ -123,6 +123,7 @@ public class PurchaseProductsTest extends Base {
     @Test(dependsOnMethods = "clickOnBurgerButton")
     public void clickOnLogOut() {
         homePage.clickOnLogOut();
+        takesScreenshots.takesScreenshot(driver, "PurchaseProductsTest");
 
     }
 
