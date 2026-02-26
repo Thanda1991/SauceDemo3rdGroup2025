@@ -97,7 +97,10 @@ public class PurchaseProductsTest extends Base {
 
         checkOutOverViewPagePage.verifyCheckOutLabel();
     }
-
+    @Test(dependsOnMethods ="verifyCheckOutLabel")
+    public void calcTotal(){
+        checkOutOverViewPagePage.calcTotal();
+    }
     @Test(dependsOnMethods = "verifyCheckOutLabel")
     public void clickFinishButton() {
         checkOutOverViewPagePage.clickFinishButton();
@@ -114,7 +117,7 @@ public class PurchaseProductsTest extends Base {
     }
 
 
-    @Test(dependsOnMethods = "verifyThankYouLabel")
+    @Test(dependsOnMethods = "clickBackHomeButton")
     public void clickOnBurgerButton() {
 
         homePage.clickOnBurgerButton();
