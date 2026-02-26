@@ -8,10 +8,12 @@ public class TestDataProvider {
 
         return new Object[][] {
                 // email, password, expectedResult
-                {"valid@test.com", "Pass123", "success"},
-                {"wrong@test.com", "Pass123", "error"},
-                {"valid@test.com", "wrong", "error"},
+                {"standard_user", "secret_sauce", "success"},
+                {"locked_out_user", "secret_sauce", "error"},
+                {"standard_user", "secret_s1auce", "error"},
                 {"", "", "error"}
         };
     }
+
+
 }
