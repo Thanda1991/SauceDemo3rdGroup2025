@@ -47,7 +47,6 @@ public class LoginPage {
     }
 
     public boolean isLoginSuccessful() {
-
         try {
 
             return productTitle_xpath.isDisplayed();

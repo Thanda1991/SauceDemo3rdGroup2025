@@ -1,7 +1,9 @@
 package Tests;
 import Utils.TestDataProvider;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
+import Utils.TakesScreenshots;
 
 public class LoginTest extends Base{
 
@@ -11,6 +13,7 @@ public class LoginTest extends Base{
         loginPage.enterUsername(email);
         loginPage.enterPassword(password);
         loginPage.clickLoginButton();
+        TakesScreenshots.takesScreenshot(driver, "login Page");
         Thread.sleep(1000);
 
         if (expectedResult.equals("success")) {
@@ -20,5 +23,10 @@ public class LoginTest extends Base{
         } else {
             Assert.assertTrue(loginPage.isLoginErrorDisplayed());
         }
+    }
+
+    @AfterTest
+    public void closeBrowser() {
+        driver.quit();
     }
 }

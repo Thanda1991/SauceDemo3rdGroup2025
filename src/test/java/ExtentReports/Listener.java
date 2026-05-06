@@ -41,5 +41,4 @@ public class Listener implements ITestListener {
         extent = ExtentReportManager.extentSetup();
     }
 
-
 }

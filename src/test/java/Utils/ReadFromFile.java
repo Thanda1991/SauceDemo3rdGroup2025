@@ -3,7 +3,6 @@ package Utils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,9 +45,6 @@ public class ReadFromFile {
 
    public static String postalCode = sheet2.getRow(1).getCell(2).getRawValue();
 
-
-
-
     @Test
     public void test(){
         System.out.println("username is "+username);
@@ -56,9 +52,5 @@ public class ReadFromFile {
         System.out.println("username is "+firstName);
         System.out.println("password is "+lastName);
         System.out.println("password is "+postalCode);
-
-
-
     }
-
 }

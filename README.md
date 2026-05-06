@@ -67,4 +67,5 @@ mvn test
 Right-click on the `testng.xml` file in your IDE and select **Run**.
 
 ## Reporting
-After the test execution completes, an ExtentReport is generated. You can find the reports in the `Reports/` directory. Open the generated `.html` file in a browser to view the detailed results.
+After the test execution completes, an ExtentReport is generated. You can find the reports in the `Reports/` directory.
+Open the generated `.html` file in a browser to view the detailed results.

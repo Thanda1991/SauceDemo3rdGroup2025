@@ -12,7 +12,7 @@ public class TakesScreenshots {
 
     private static String ScreenshotDir = System.getProperty("user.dir") + "/Screenshots/";
 
-    public void takesScreenshot(WebDriver driver, String screenshotName) {
+    public static void takesScreenshot(WebDriver driver, String screenshotName) {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File src = takesScreenshot.getScreenshotAs(OutputType.FILE);
         File destination = new File(ScreenshotDir, screenshotName + ".png");
